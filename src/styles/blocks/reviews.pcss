@@ -1,6 +1,15 @@
 
 .reviews{
-  padding: 160px auto;
+  height: 100vh;
+  min-height: 650px;
+}
+
+.reviews__container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 60px 160px;
+  padding-top: 250px;
 }
 
 .reviews-section__title{
@@ -14,4 +23,59 @@
 }
 .slider__control--left{
   margin-right: 30px;
+}
+
+.reviews-slider__list{
+  display: flex;
+}
+
+.reviews-slider__item{
+  display: flex;
+  margin-right: 74px;
+  max-width: 324px;
+
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.quote__icon{
+  width: 75px;
+  height: 63px;
+  fill: #text-color;
+  opacity: .07;
+  margin-right: 30px;
+}
+
+.quote__author{
+  display: flex;
+  align-items: center;
+}
+
+.quote__text,
+.person-info__occ{
+  margin-bottom: 46px;
+  opacity: 0.5;
+  color: #414c63;
+  font-family: "Open Sans";
+  line-height: 30px;
+}
+.quote__text{
+  min-height: 103px;
+}
+
+.person-info__avatar{
+  margin-right: 30px;
+}
+.person-info__img-small{
+  display: flex;
+  flex-shrink: 1;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+.person-info__name{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 48px;
 }

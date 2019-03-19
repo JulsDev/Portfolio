@@ -10,7 +10,6 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        
         .welcome-section
           .section.hero
             .container.hero__container
@@ -76,7 +75,6 @@ html(lang="en")
             )
         .section.skills
           .container.skills__container
-            +image('content/bag.png', 'skills__image-bg')
             .skills-descr
               h2.skills-descr__title Чем я могу быть полезен вам
               .skills-descr__about
@@ -121,7 +119,7 @@ html(lang="en")
                                 stroke-dashoffset=`${j.progress}`)    
                           span.skill__title #{j.title}
         .section.works
-          .container
+          .container.works__container
             .title.works-title Мои работы
             .works-content
               .works-slider
@@ -130,7 +128,7 @@ html(lang="en")
                   ul.slider-images__list
                   - 
                     var work_img = [
-                      'content/Слой_271.png', 'content/Слой_281.png', 'content/Слой_291.png', `content/Слой_302.png`
+                      'content/Слой_302.png', 'content/Слой_281.png', 'content/Слой_291.png', `content/Слой_271.png`
                     ]
                   each item in work_img
                     li.slider-images__item
@@ -155,7 +153,7 @@ html(lang="en")
                 .frontend__link
                   +icon(`link`, 'frontend__link-icon')
                   a(href="https://loftschool.com").loftschool__link Посмотреть сайт
-        
+    
         .contacts-section
           .section.reviews
             .container.reviews__container
@@ -173,29 +171,51 @@ html(lang="en")
                       text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
                       name: "Ковальчук Дмитрий", 
                       occ: "Основатель LoftSchool",
-                      photo: "reviews_dima.png"
+                      photo: "reviews_dima.jpg"
                     },
                     {
-                      text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                      text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
                       name: "Владимир Сабанцев", 
                       occ: "Преподаватель",
-                      photo: "reviews_wowa.png"
+                      photo: "reviews_wowa.jpg"
                     },
                   ]
                 each item in reviews
+                  +icon(`quote`, 'quote__icon')
                   li.reviews-slider__item
                     quote
                       .quote__text #{item.text}
                       .quote__author
                         .person-info.person-info-horizontal
                         .person-info__avatar
-                          +image(`content/${item.photo}`, 'person-info__avatar-img')
+                          +image(`content/${item.photo}`, 'person-info__img-small')
                         .person-info__data
                           .person-info__name #{item.name} 
                           .person-info__occ #{item.occ}
           .section.form
             .container.form__container
-        
+              .title.form__title Связаться со мной
+              .form__content
+                .form__row
+                  .form__block.form__block--name
+                    label.form__label Введите ваше имя
+                    .form__input
+                      +icon(`user`, 'form__block-icon')
+                      input#name.form__block-input(type='text', name='name', placeholder="Ковальчук Дмитрий", required='')
+                  .form__block.form__block--email
+                    label.form__label Введите ваш email
+                    .form__input
+                      +icon(`envelope`, 'form__block-icon')
+                      input#email.form__block-input(type='email', name='email', placeholder='loftschool@study.com', required='')             
+                .form__row 
+                  .form__block
+                    label.form__label Сообщение к письму
+                    .form__input.form__input--comment
+                      +icon(`message`, 'form__block-icon')
+                      textarea.form__input.form__textarea(id="message" name="message" type="text" required rows="2"
+                        placeholder="Требуется ваша помощь в создании сайта.\n" +
+                        "Интересуют сроки и цена вопроса")
+              .form__button Отправить
         footer.footer
           .container.footer__container
             .footer__copyright
