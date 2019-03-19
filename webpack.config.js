@@ -50,7 +50,7 @@ module.exports = (env, argv) => {
         loader: "svg-sprite-loader",
         options: {
           extract: true,
-          spriteFilename: svgPath => `sprite${svgPath.substr(-4)}`
+          spriteFilename: svgPath => `/sprite${svgPath.substr(-4)}`
         }
       },
       "svg-transform-loader",
