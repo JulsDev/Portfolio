@@ -207,15 +207,14 @@ html(lang="en")
                     .form__input
                       +icon(`envelope`, 'form__block-icon')
                       input#email.form__block-input(type='email', name='email', placeholder='loftschool@study.com', required='')             
-                .form__row 
+                .form__row
                   .form__block
                     label.form__label Сообщение к письму
                     .form__input.form__input--comment
                       +icon(`message`, 'form__block-icon')
                       textarea.form__input.form__textarea(id="message" name="message" type="text" required rows="2"
-                        placeholder="Требуется ваша помощь в создании сайта.\n" +
-                        "Интересуют сроки и цена вопроса")
-              .form__button Отправить
+                        placeholder="Требуется ваша помощь.")
+              button(type="submit").form__button Отправить
         footer.footer
           .container.footer__container
             .footer__copyright

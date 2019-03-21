@@ -58,7 +58,8 @@
 .skills-person-block{
   display: flex;
   justify-content: flex-end;
-  //align-items: flex-end;
+  max-width: 749px;
+  max-height: 462px;
 }
 
 .skills-person{
@@ -67,6 +68,7 @@
 }
 
 .skills-row__title{
+  position: relative;
   margin-bottom: 20px;
   font-family: "Open Sans";
   font-size: 24px;
@@ -94,3 +96,9 @@
   position: relative;
 }
 
+.skill__title{
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-44%, -50%);
+}
