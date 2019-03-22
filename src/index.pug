@@ -14,7 +14,7 @@ html(lang="en")
           .fullscreensection.hero
             .container.hero__container
               header.header
-                .logo ЮА
+                a(href="/").logo ЮА
                 .header__menu
                   nav.nav
                     ul.nav__list
@@ -138,6 +138,7 @@ html(lang="en")
                     +icon(`arrow-down`, 'icon__arrow icon__arrow-up')
                   button.slider__control.slider__control--down
                     +icon(`arrow-down`, 'icon__arrow icon__arrow-down')
+              .works-slider__number 4
               .works-descr                    
                 .frontend__tech
                   ul.frontend__tech--list
@@ -214,7 +215,7 @@ html(lang="en")
                       .form__input.form__input--comment
                         +icon(`message`, 'form__block-icon')
                         textarea.form__input.form__textarea(id="message" name="message" type="text" required rows="2"
-                          placeholder="Требуется ваша помощь.")
+                          placeholder="Требуется ваша помощь")
                 button(type="submit").form__button Отправить
         footer.footer
           .container.footer__container
