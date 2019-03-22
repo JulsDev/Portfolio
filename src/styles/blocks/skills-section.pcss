@@ -1,16 +1,9 @@
-.skills{
-  height: 100vh;
-  min-height: 650px;
-  position: relative;
-  padding: 90px 160px;
-}
 
 .skills__container{
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   position: relative;
-  height: 100%;
+  padding: 150px 233px;
 }
 
 .skills__container:before{
@@ -21,22 +14,20 @@
   background-image: url('../images/content/bag.png');
   background-size: cover;
   position: absolute;
-  bottom: -20%;
-  left: -15%;
+  bottom: 15%;
+  left: -5%;
   z-index: -1;
 }
 
 .skills-descr{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-bottom: 67px;
 }
 
 .skills-descr__title{
   display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
@@ -45,10 +36,8 @@
 
 .skills-descr__about{
   display: flex;
-  justify-content: flex-start;
   max-width: 585px;
-  margin-bottom: 96px;
-  margin-left: 96px;
+  padding-left: 50px;
   opacity: 0.5;
   font-size: 16px;
   font-weight: 400;
@@ -57,15 +46,22 @@
 
 .skills-person-block{
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
   max-width: 749px;
   max-height: 462px;
+  margin-left: 30%;
 }
 
 .skills-person{
   display: flex;
   flex-direction: column;
 }
+
+.skills-person__item{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .skills-row__title{
   position: relative;
@@ -97,8 +93,12 @@
 }
 
 .skill__title{
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  transform: translate(-44%, -50%);
+    position: absolute;
+//    top: 55%;
+//    left: 44%;
+//    transform: translate(-50%, -50%);
+    color: rgba($text-color, 0.5);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
 }

@@ -1,13 +1,8 @@
-.form{
-  height: 100vh;
-  min-height: 650px;
-}
-
 .form__container{
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 60px 160px;
+  //height: 100%;
+  padding: 200px 160px;
 }
 
 .form__title{
@@ -45,7 +40,8 @@
 .form__block{
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #414c63;
+  border-bottom: 1px solid #414c63;
+  width: 30%;
   margin-right: 50px;
   &:last-child{
     margin-right: 0;
@@ -83,9 +79,11 @@
 
 .form__input--comment{
   display: flex;
+  align-items: center;
 }
 
 .form__textarea {
+  max-width: 409px;
   resize: none;
   outline: none;
   background: none;
