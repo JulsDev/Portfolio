@@ -2,15 +2,41 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  @include tablets{
+    padding-left: 38px;
+  }
+  @include phones(){
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .works-title{
   margin-bottom: 92px;
+
+  @include tablets(){
+    margin-bottom: 50px;
+  }
+  @include phones(){
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+  }
 }
 
 .works-content{
   display: flex;
   position: relative;
+
+  @include tablets{
+    flex-direction: column;
+    align-items: center;
+  }
+  @include phones{
+    justify-content: flex-start;
+  }
 }
 
 .works-slider__number{
@@ -21,20 +47,40 @@
   opacity: 0.08;
   font-size: 400px;
   font-weight: 800;
+
+  @include tablets{
+    right: -3%;
+    top: 20%;
+  }
+  @include phones{
+    display: none;
+  }
 }
 
 .works-slider{
   display: flex;
   flex-direction: column;
-  margin-right: 148px;
-  width: 67%;
+  margin-right: 108px;
   position: relative;
+  width: 90%;
+
+  @include tablets(){
+    width: 90%;
+    margin-bottom: 53px;
+  }
+
+  @include phones(){
+    width: 85%;
+    margin-bottom: 60px;
+    margin-right: 0;
+  }
 }
 
 .works-slider__images{
   position: relative;
-  max-width: 975px;
-  max-height: 549px;
+  width: 100%;
+  //max-width: 975px;
+  //max-height: 549px;
 }
 
 .slider-images__list{
@@ -43,7 +89,12 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 18%;
   z-index: 2;
+
+  @include phones(){
+    display: none;
+  }
 }
 
 .slider-images__item{
@@ -52,6 +103,10 @@
   position: relative;
   z-index: 2;
   cursor: pointer;
+
+  &:last-child{
+    border: 2px solid $border-color;
+  }
 
   &:hover{
     border: 2px solid $border-color;
@@ -76,12 +131,27 @@
   justify-content: flex-start;
   width: 33%;
   max-width: 341px;
+
+  @include tablets(){
+    align-items: center;
+    width: 100%;
+    max-width: 438px;
+  }
+
+  @include phones(){
+    align-items: flex-start;
+    padding: 0 30px;
+  }
 }
 
 .frontend__tech--list{
   display: flex;
   justify-content: flex-start;
   margin-bottom: 50px;
+
+  @include tablets{
+    margin-bottom: 28px;
+  }
 }
 
 .frontend__tech--item{
@@ -106,7 +176,11 @@
   margin-bottom: 44px;
   font-size: 30px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 44px;
+
+  @include tablets{
+    margin-bottom: 30px;
+  }
 }
 
 .frontend__descr{
@@ -114,6 +188,19 @@
   font-weight: 400;
   line-height: 30px;
   margin-bottom: 50px;
+
+  @include tablets{
+    margin-bottom: 30px;
+  }
+}
+
+.frontend__descr--text{
+  @include tablets{
+    text-align: center;
+  }
+  @include phones{
+    text-align: left;
+  }
 }
 
 .frontend__link{

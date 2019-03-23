@@ -1,5 +1,6 @@
 include ./mixins.pug
 
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -29,6 +30,8 @@ html(lang="en")
                       li.socials__item
                         a(href="").socials__link
                           +icon(`${item}`, 'socials__icon')
+                include ./components/humburger-menu
+
               .hero__content
                 .user-info
                   .user-info__descr Личный сайт<br>веб-разработчика
@@ -101,23 +104,24 @@ html(lang="en")
                     ],
                   ]
                 each i in skills
-                  li.skills-person__item.skills-row
-                    h3.skills-row__title #{i[0]}
-                    ul.skills-row__list
-                      each j in i[1]
-                        li.skills-row__item
-                          .skill
-                            svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
-                              lineargradient#gradient(x1='0', y1='0', x2='0', y2='100%')
-                                  stop(offset='0%', stop-color='#5500f2')
-                                  stop(offset='100%', stop-color='#8f00ef')
-                              circle.skill__circle.skill__circle--under(r="40" cx="50" cy="50")
-                              circle.skill__circle.skill__circle--above(
-                                r="40" cx="50" cy="50"
-                                stroke="url(#gradient)"
-                                transform="rotate(-180 50 50)"
-                                stroke-dashoffset=`${j.progress}`)    
-                          span.skill__title #{j.title}
+                  li.skills-person__item
+                    .skills-row
+                      h3.skills-row__title #{i[0]}
+                      ul.skills-row__list
+                        each j in i[1]
+                          li.skills-row__item
+                            .skill
+                              svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
+                                lineargradient#gradient(x1='0', y1='0', x2='0', y2='100%')
+                                    stop(offset='0%', stop-color='#5500f2')
+                                    stop(offset='100%', stop-color='#8f00ef')
+                                circle.skill__circle.skill__circle--under(r="40" cx="50" cy="50")
+                                circle.skill__circle.skill__circle--above(
+                                  r="40" cx="50" cy="50"
+                                  stroke="url(#gradient)"
+                                  transform="rotate(-180 50 50)"
+                                  stroke-dashoffset=`${j.progress}`)    
+                            span.skill__title #{j.title}
         .section.works
           .container.works__container
             .title.works-title Мои работы
@@ -148,9 +152,9 @@ html(lang="en")
                       h3.tech-text CSS
                     li.frontend__tech--item
                       h3.tech-text Javascript
-                .frontend__title Сайт школы<br>образования
+                .frontend__title Сайт школы образования
                 .frontend__descr 
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  p.frontend__descr--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .frontend__link
                   +icon(`link`, 'frontend__link-icon')
                   a(href="https://loftschool.com").loftschool__link Посмотреть сайт
@@ -223,8 +227,8 @@ html(lang="en")
               .copyright
                 .copyright__year © 2019
                 .copyright__info
-                  .copyright__username Юлия<br>Асеева
-                  .copyright__desc Личный сайт<br>веб-разработчика
+                  .copyright__username Юлия Асеева
+                  .copyright__desc Личный сайт веб-разработчика
             .footer__data
               .footer__menu
                 nav.nav.nav--color-white

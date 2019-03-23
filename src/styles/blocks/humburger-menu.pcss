@@ -1,0 +1,21 @@
+.humburger-menu{
+  display: none;
+  position: relative;
+
+  @include tablets(){
+    display: flex;
+  }
+}
+
+.humburge-menu__line{
+  display: flex;
+  width: 24px;
+  height: 5px;
+  background-color: $text-color;
+  margin-bottom: 3px;
+  border-radius: 2px;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}

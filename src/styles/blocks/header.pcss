@@ -1,11 +1,22 @@
 .header{
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .header__menu{
   display: flex;
   justify-content: center;
-  flex: 1;
-  margin: 0 20px;
+
+  @include tablets(){
+    display: none;
+  }
+}
+
+.header__links{
+  display: flex;
+
+  @include phones(){
+    display: none;
+  }
 }
