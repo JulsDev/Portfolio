@@ -19,3 +19,66 @@
     margin-bottom: 0;
   }
 }
+
+.humburger-menu-popup{
+  display: none;
+  flex-direction: column;
+  padding: 237px 60px;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  background-size: cover;
+
+  .header__links{
+    @include phones(){
+      display: flex;
+    }
+  }
+  
+  @include phones(){
+    width: 100%;
+    padding: 194px 60px;
+  }
+}
+
+.menu-popup__list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  height: 253px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.humburger-menu-popup--opened{
+  display: flex;
+  position: absolute;
+  opacity: 1;
+}
+
+.humburger-menu-popup--close{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 67px;
+  right: 42px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.humburger-menu-popup--close:after{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "+";
+  font-size: 55px;
+  font-weight: 700;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: $text-color;
+  opacity: 0.6;
+}

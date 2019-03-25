@@ -3,42 +3,18 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 10% 18%;
+  padding: 10% 0;
 
   @include phones(){
     padding: 90px 0;
   }
 }
 
-.skills__container:before{
-  display: block;
-  content: "";
-  max-width: 31.25rem;
-  max-height: 31.25rem;
-  width: 100%;
-  height: 100%;
-  background-image: url('../images/content/bag.png');
-  background-size: cover;
-  position: absolute;
-  bottom: 15%;
-  left: -5%;
-  z-index: -1;
-
-  @include tablets(){
-    display: none;
-    width: 316px;
-    height: 281px;
-    left: 33%;
-    bottom: -25%;
-  }
-
-}
-
 .skills-descr{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15%;
+  margin-bottom: 7%;
 
   @include tablets(){
     margin-bottom: 25%;
@@ -86,16 +62,37 @@
   }
 }
 
+.skills-block{
+  display: flex;
+  width: 100%;
+  
+  @include tablets(){
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.skills-person-bag{
+  display: flex;
+  width: 38%;
+  max-height: 28.25rem;
+
+  @include tablets(){
+    width: 100%;
+    max-width: 316px;
+    max-height: 281px;
+  }
+}
+
 .skills-person-block{
   display: flex;
   align-items: flex-end;
+  width: 60%;
   max-width: 749px;
-  margin-left: 30%;
 
   @include tablets(){
     max-width: 567px;
     justify-content: center;
-    margin-left: 0;
   }
 
   @include phones(){

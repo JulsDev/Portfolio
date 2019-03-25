@@ -10,118 +10,136 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
+      include ./components/humburger-menu-popup
       .maincontent
+        //.parallax-mount-section
+          .parallax__layer(data-speed="0.1")
+              img(src=require("images/content/parallax/mountain/Sky.png")).parallax__image
+          .parallax__layer(data-speed="0.20")
+              img(src=require("images/content/parallax/mountain/Mountain.png")).parallax__image
+          .parallax__layer(data-speed="0.30")
+              img(src=require("images/content/parallax/mountain/Baloon.png")).parallax__image
+          .parallax__layer(data-speed="0.33")
+              img(src=require("images/content/parallax/mountain/Cloud.png")).parallax__image
+          .parallax__layer(data-speed="0.43")
+              img(src=require("images/content/parallax/mountain/Man.png")).parallax__image
+          .parallax__layer(data-speed="0.48")
+              img(src=require("images/content/parallax/mountain/Mountain1.png")).parallax__image
+          .parallax__layer(data-speed="0.50")
+              img(src=require("images/content/parallax/mountain/White.png")).parallax__image  
         .welcome-section
-          .fullscreensection.hero
-            .container.hero__container
-              header.header
-                a(href="/").logo ЮА
-                .header__menu
-                  nav.nav
-                    ul.nav__list
-                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
-                .header__links
-                  ul.socials__list
-                    - var socials = ['insta', 'vk', 'github'];
-                    each item in socials
-                      li.socials__item
-                        a(href="").socials__link
-                          +icon(`${item}`, 'socials__icon')
-                include ./components/humburger-menu
-
-              .hero__content
-                .user-info
-                  .user-info__descr Личный сайт<br>веб-разработчика
-                  .user-info__name Юлия<br>Асеева
-              .hero__scroll-button
-                a(href="").scroll-down-button Скролл
-                  +icon(`scroll`, 'scroll__icon')
-          .fullscreensection.fullscreensection_centered.about
-            .container.about__container
-              .about__block
-                .about__left
-                  .person-info
-                    .person-info__avatar
-                      +image(`content/user.jpg`, 'person-info__avatar-img')
-                    .person-info__data
-                      table.person-info__table
-                        - 
-                          var data = [
-                            ['Проживаю:', 'Москва'],
-                            ['Возраст:', '28 лет'],
-                            ['Родилась:', '4 июня 1990'],
+              .fullscreensection.hero
+                .container.hero__container
+                  header.header
+                    a(href="/").logo ЮА
+                    .header__menu
+                      nav.nav
+                        ul.nav__list
+                        - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                        each item in menu
+                          li.nav__item
+                            a(href="").nav__link #{item}
+                    .header__links
+                      ul.socials__list
+                        - var socials = ['insta', 'vk', 'github'];
+                        //- 
+                          var socials = [
+                            {socnet: "insta", link: '#'},
+                            {socnet: "vk", link: '#'},
+                            {socnet: "github", link: '#'}
                           ]
-                        each row in data
-                          tr.person-info__data-row
-                            td.data-row__first-col #{row[0]}
-                            td.data-row__second-col #{row[1]}
-                .about__right
-                  .person-descr
-                    .person-descr__hello Привет, меня зовут
-                    .person-descr__name Юлия Асеева
-                    .person-descr__youself
-                      p Я занимаюсь разработкой современных сайтов и приложений.
-                      p Мне нравится делать интересные и современные проекты.
-                    .person-descr__footnote
-                      p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .triangles
-          svg.triangles__item.triangles__item--left(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(
-              points="0,0  0,100 1000,100"
-            )
-          svg.triangles__item.triangles__item--right(viewBox="0 0 1000 100" preserveAspectRatio="none")
-            polygon(
-              points="0,100  1000,100 1000,0"
-            )
+                        each item in socials
+                          li.socials__item
+                            a(href="").socials__link
+                              +icon(`${item}`, 'socials__icon')
+
+                    include ./components/humburger-menu
+
+                  .hero__content
+                    .user-info
+                      .user-info__descr Личный сайт<br>веб-разработчика
+                      .user-info__name Юлия<br>Асеева
+                  .hero__scroll-button
+                    a(href="").scroll-down-button Скролл
+                      +icon(`scroll`, 'scroll__icon')
+              .fullscreensection.fullscreensection_centered.about
+                .container.about__container
+                  .about__block
+                    .about__left
+                      .person-info
+                        .person-info__avatar
+                          +image(`content/user.jpg`, 'person-info__avatar-img')
+                        .person-info__data
+                          table.person-info__table
+                            - 
+                              var data = [
+                                ['Проживаю:', 'Москва'],
+                                ['Возраст:', '28 лет'],
+                                ['Родилась:', '4 июня 1990'],
+                              ]
+                            each row in data
+                              tr.person-info__data-row
+                                td.data-row__first-col #{row[0]}
+                                td.data-row__second-col #{row[1]}
+                    .about__right
+                      .person-descr
+                        .person-descr__hello Привет, меня зовут
+                        .person-descr__name Юлия Асеева
+                        .person-descr__youself
+                          p Я занимаюсь разработкой современных сайтов и приложений.
+                          p Мне нравится делать интересные и современные проекты.
+                        .person-descr__footnote
+                          p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        include ./components/triangles
         .section.skills
           .container.skills__container
             .skills-descr
-              h2.skills-descr__title Чем я могу быть полезен вам
+              h2.skills-descr__title Чем я могу быть полезна вам
               .skills-descr__about
                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .skills-person-block
-              ul.skills-person
-                - 
-                  var skills = [
-                    ['Frontend', 
-                      [
-                          {title: "HTML5", progress: 230},
-                          {title: "CSS3", progress: 230},
-                          {title: "JavaScript", progress: 250},
-                          {title: "Jquery и Vue.js", progress: 200}
-                      ]
-                    ],
-                    ['Workflow', 
-                      [
-                          {title: "GIT",progress: 220},
-                          {title: "Terminal", progress: 170},
-                          {title: "Gulp", progress: 260},
-                          {title: "Webpack",progress: 260}
-                      ]
-                    ],
-                  ]
-                each i in skills
-                  li.skills-person__item
-                    .skills-row
-                      h3.skills-row__title #{i[0]}
-                      ul.skills-row__list
-                        each j in i[1]
-                          li.skills-row__item
-                            .skill
-                              svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
-                                lineargradient#gradient(x1='0', y1='0', x2='0', y2='100%')
-                                    stop(offset='0%', stop-color='#5500f2')
-                                    stop(offset='100%', stop-color='#8f00ef')
-                                circle.skill__circle.skill__circle--under(r="40" cx="50" cy="50")
-                                circle.skill__circle.skill__circle--above(
-                                  r="40" cx="50" cy="50"
-                                  stroke="url(#gradient)"
-                                  transform="rotate(-180 50 50)"
-                                  stroke-dashoffset=`${j.progress}`)    
-                            span.skill__title #{j.title}
+            .skills-block
+              .skills-person-bag
+                +image(`content/bag.png`, 'skills-bag__img')
+              .skills-person-block
+                ul.skills-person
+                  - 
+                    var skills = [
+                      ['Frontend', 
+                        [
+                            {title: "HTML5", progress: 230},
+                            {title: "CSS3", progress: 230},
+                            {title: "JavaScript", progress: 250},
+                            {title: "Jquery и Vue.js", progress: 200}
+                        ]
+                      ],
+                      ['Workflow', 
+                        [
+                            {title: "GIT",progress: 220},
+                            {title: "Terminal", progress: 170},
+                            {title: "Gulp", progress: 260},
+                            {title: "Webpack",progress: 260}
+                        ]
+                      ],
+                    ]
+                  each i in skills
+                    li.skills-person__item
+                      .skills-row
+                        h3.skills-row__title #{i[0]}
+                        ul.skills-row__list
+                          each j in i[1]
+                            li.skills-row__item
+                              .skill
+                                svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
+                                  lineargradient#gradient(x1='0', y1='0', x2='0', y2='100%')
+                                      stop(offset='0%', stop-color='#5500f2')
+                                      stop(offset='100%', stop-color='#8f00ef')
+                                  circle.skill__circle.skill__circle--under(r="40" cx="50" cy="50")
+                                  circle.skill__circle.skill__circle--above(
+                                    r="40" cx="50" cy="50"
+                                    stroke="url(#gradient)"
+                                    transform="rotate(-180 50 50)"
+                                    stroke-dashoffset=`${j.progress}`)    
+                              span.skill__title #{j.title}
         .section.works
           .container.works__container
             .title.works-title Мои работы
@@ -158,7 +176,6 @@ html(lang="en")
                 .frontend__link
                   +icon(`link`, 'frontend__link-icon')
                   a(href="https://loftschool.com").loftschool__link Посмотреть сайт
-    
         .contacts-section
           .container__contacts
             .section.reviews
@@ -221,35 +238,7 @@ html(lang="en")
                         textarea.form__input.form__textarea(id="message" name="message" type="text" required rows="2"
                           placeholder="Требуется ваша помощь")
                 button(type="submit").form__button Отправить
-        footer.footer
-          .container.footer__container
-            .footer__copyright
-              .copyright
-                .copyright__year © 2019
-                .copyright__info
-                  .copyright__username Юлия Асеева
-                  .copyright__desc Личный сайт веб-разработчика
-            .footer__data
-              .footer__menu
-                nav.nav.nav--color-white
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
-              .footer__data-columns
-                .footer__data-col
-                  article.footer__text
-                    p(class="footer__text-txt") Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                  ul.footer__social.socials.socials--rounded
-                    each item in socials
-                      li.socials__item
-                        a(href="").socials__link
-                          +icon(`${item}`, 'socials__icon')
-                .footer__data-col
-                  article.footer__text
-                    p(class="footer__text-txt") Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                    p(class="footer__text-person") Martin Golding
-
+          include ./components/footer
 
 
               
