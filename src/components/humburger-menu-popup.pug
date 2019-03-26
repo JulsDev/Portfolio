@@ -1,0 +1,14 @@
+.humburger-menu-popup
+  ul.menu-popup__list
+    - var menupopup = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+    each item in menupopup
+      li.menu-popup__item 
+        a(href="#").menu-popup__link #{item}
+  .header__links
+    ul.socials__list
+     - var socials = ['insta', 'vk', 'github'];
+      each item in socials
+        li.socials__item
+          a(href="").socials__link
+            +icon(`${item}`, 'socials__icon')
+  .humburger-menu-popup--close

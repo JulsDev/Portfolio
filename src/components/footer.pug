@@ -1,0 +1,28 @@
+footer.footer
+  .container.footer__container
+    .footer__copyright
+      .copyright
+        .copyright__year © 2019
+        .copyright__info
+          .copyright__username Юлия Асеева
+          .copyright__desc Личный сайт веб-разработчика
+    .footer__data
+      .footer__menu
+        nav.nav.nav--color-white
+          ul.nav__list
+            each item in menu
+              li.nav__item
+                a(href="").nav__link #{item}
+      .footer__data-columns
+        .footer__data-col
+          article.footer__text
+            p(class="footer__text-txt") Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+          ul.footer__social.socials.socials--rounded
+            each item in socials
+              li.socials__item
+                a(href="").socials__link
+                  +icon(`${item}`, 'socials__icon')
+        .footer__data-col
+          article.footer__text
+            p(class="footer__text-txt") Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+            p(class="footer__text-person") Martin Golding

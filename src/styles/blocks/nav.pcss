@@ -1,0 +1,24 @@
+.nav,
+.nav__list{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.nav__item{
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  margin-right: 60px;
+  margin-bottom: 32px;
+  &:last-child{
+    margin-right: 0px;
+  }
+
+  @include tablets(){
+    margin-right: 70px;
+    margin-bottom: 32px;
+  }
+}

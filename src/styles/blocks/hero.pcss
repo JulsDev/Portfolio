@@ -1,0 +1,85 @@
+.hero{
+  height: 100vh;
+  min-height: 650px;
+}
+
+.hero__container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 65px 20px;
+}
+
+.hero__content{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info{
+  display: flex;
+
+  @include tablets(){
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.user-info__descr{
+  text-align: right;
+  margin-right: 60px;
+  opacity: .4;
+  line-height: 30px;
+
+  @include tablets(){
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.user-info__name{
+  font-size: 69px;
+  font-weight: 800;
+  line-height: 60px;
+
+  @include tablets(){
+    text-align: center;
+    font-size: 56px;
+    line-height: 48px;
+  }
+  @include phones(){
+    font-size: 48px;
+  }
+}
+
+.hero__scroll-button{
+  display: inline-flex;
+  vertical-align: middle;
+  justify-content: center;
+
+  @include phones(){
+    display: none;
+  }
+}
+
+.scroll-down-button{
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover{
+    color: $hover-color;
+    fill: $hover-color;
+  }
+}
+
+.scroll__icon{
+  width: 1.55rem;
+  height: 30px;
+  margin-left: 20px;
+}
