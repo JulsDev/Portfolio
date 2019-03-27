@@ -137,46 +137,11 @@ html(lang="en")
                 .frontend__link
                   +icon(`link`, 'frontend__link-icon')
                   a(href="https://loftschool.com").loftschool__link Посмотреть сайт
-        
         .contacts-section
           .container__contacts
             .section.reviews
               .container.reviews__container
-                .reviews-section__title
-                  .title.reviews__title Что обо мне говорят
-                  .reviews-slider__controls
-                    a(href="").slider__control.slider__control--circle.slider__control--left
-                      +icon(`arrow-down`, 'icon__arrow icon__arrow-left')
-                    a(href="").slider__control.slider__control--circle.slider__control--right
-                      +icon(`arrow-down`, 'icon__arrow icon__arrow-right')
-                ul.reviews-slider__list
-                  - 
-                    var reviews = [
-                      {
-                        text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                        name: "Ковальчук Дмитрий", 
-                        occ: "Основатель LoftSchool",
-                        photo: "reviews_dima.jpg"
-                      },
-                      {
-                        text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                        name: "Владимир Сабанцев", 
-                        occ: "Преподаватель",
-                        photo: "reviews_wowa.jpg"
-                      },
-                    ]
-                  each item in reviews
-                    +icon(`quote`, 'quote__icon')
-                    li.reviews-slider__item
-                      quote
-                        .quote__text #{item.text}
-                        .quote__author
-                          .person-info.person-info-horizontal
-                          .person-info__avatar
-                            +image(`content/${item.photo}`, 'person-info__img-small')
-                          .person-info__data
-                            .person-info__name #{item.name} 
-                            .person-info__occ #{item.occ}
+                #reviews-component
             .section.form
               .container.form__container
                 .title.form__title Связаться со мной

@@ -5,8 +5,23 @@ const skill = {
   props: {
     skillName: String,
     skillPercent: Number
+  },
+  methods: {
+    drawColoredCircle(){
+        const circle = this.$refs['color-circle'];
+        const dashArray = parseInt(
+        getComputedStyle(circle).getPropertyValue('stroke-dasharray')
+      );
+      
+      // Насколько нам нужно выставить dashoffset
+      const percent =(dashArray / 100) * (100 - this.skillPercent);
+      circle.style.strokeDashoffset = percent;
+    }
+  },
+  mounted(){
+    this.drawColoredCircle();
   }
-}
+};
 
 const skillsRow = {
   template: "#skills-row",

@@ -20,10 +20,10 @@ script(type="text/x-template")#skills-row
 
 script(type="text/x-template")#skill
   .skill
-    svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
+    svg(viewBox="0 0 100 100").skill__shape
       lineargradient#gradient(x1='0', y1='0', x2='100%', y2='0')
           stop(offset='0%', stop-color='#5500f2')
           stop(offset='100%', stop-color='#8f00ef')
       circle(r="40" cx="50" cy="50").skill__circle.skill__circle--under
-      circle(r="40" cx="50" cy="50" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--above    
+      circle(r="40" cx="50" cy="50" ref="color-circle" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--above    
     span.skill__title {{skillName}}

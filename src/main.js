@@ -6,4 +6,4 @@ if (process.env.NODE_ENV === "development") {
 import "./scripts/parallax-mount";
 import "./scripts/humburger-menu";
 import "./scripts/skills";
-//import "./scripts/reviews";
+import "./scripts/reviews";
