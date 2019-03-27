@@ -1,9 +1,10 @@
 .parallax-mount-section{
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
-  overflow: hidden;
-  min-height: 1300px; 
+  overflow: hidden; 
+  height: 195vh;
 }
 
 .parallax__layer{
@@ -38,19 +39,19 @@
   }
   &:nth-child(4){
     .parallax__image{
-      top: 400px;
+      top: 420px;
       left: 0;
     }
   }
   &:nth-child(5){
     .parallax__image{
       top: 500px;
-      left: -20%;
+      left: -12%;
     }
   }
   &:nth-child(6){
     .parallax__image{
-      right: -40%;
+      right: -10%;
       bottom: 0;
     }
   }
@@ -58,7 +59,8 @@
   &:nth-child(7){
     .parallax__image{
       left: 0;
-      bottom: 0;
+      bottom: -500px;
+      width: 100%;
     }
   }
 }

@@ -12,22 +12,22 @@ html(lang="en")
     .wrapper
       include ./components/humburger-menu-popup
       .maincontent
-        //.parallax-mount-section
+        .parallax-mount-section
           .parallax__layer(data-speed="0.1")
-              img(src=require("images/content/parallax/mountain/Sky.png")).parallax__image
+              img(src=require("./images/content/parallax/mountain-baloon/layer-0.jpg")).parallax__image
+          .parallax__layer(data-speed="0.10")
+              img(src=require("./images/content/parallax/mountain-baloon/layer-1.png")).parallax__image
           .parallax__layer(data-speed="0.20")
-              img(src=require("images/content/parallax/mountain/Mountain.png")).parallax__image
-          .parallax__layer(data-speed="0.30")
-              img(src=require("images/content/parallax/mountain/Baloon.png")).parallax__image
+              img(src=require("./images/content/parallax/mountain-baloon/layer-2.png")).parallax__image
+          .parallax__layer(data-speed="0.23")
+              img(src=require("./images/content/parallax/mountain-baloon/layer-3.png")).parallax__image
           .parallax__layer(data-speed="0.33")
-              img(src=require("images/content/parallax/mountain/Cloud.png")).parallax__image
-          .parallax__layer(data-speed="0.43")
-              img(src=require("images/content/parallax/mountain/Man.png")).parallax__image
-          .parallax__layer(data-speed="0.48")
-              img(src=require("images/content/parallax/mountain/Mountain1.png")).parallax__image
-          .parallax__layer(data-speed="0.50")
-              img(src=require("images/content/parallax/mountain/White.png")).parallax__image  
-        .welcome-section
+              img(src=require("./images/content/parallax/mountain-baloon/layer-4.png")).parallax__image
+          .parallax__layer(data-speed="0.38")
+              img(src=require("./images/content/parallax/mountain-baloon/layer-5.png")).parallax__image
+          .parallax__layer(data-speed="0.40")
+              img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image  
+          .welcome-section
               .fullscreensection.hero
                 .container.hero__container
                   header.header
@@ -99,47 +99,8 @@ html(lang="en")
                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .skills-block
               .skills-person-bag
-                +image(`content/bag.png`, 'skills-bag__img')
-              .skills-person-block
-                ul.skills-person
-                  - 
-                    var skills = [
-                      ['Frontend', 
-                        [
-                            {title: "HTML5", progress: 230},
-                            {title: "CSS3", progress: 230},
-                            {title: "JavaScript", progress: 250},
-                            {title: "Jquery и Vue.js", progress: 200}
-                        ]
-                      ],
-                      ['Workflow', 
-                        [
-                            {title: "GIT",progress: 220},
-                            {title: "Terminal", progress: 170},
-                            {title: "Gulp", progress: 260},
-                            {title: "Webpack",progress: 260}
-                        ]
-                      ],
-                    ]
-                  each i in skills
-                    li.skills-person__item
-                      .skills-row
-                        h3.skills-row__title #{i[0]}
-                        ul.skills-row__list
-                          each j in i[1]
-                            li.skills-row__item
-                              .skill
-                                svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
-                                  lineargradient#gradient(x1='0', y1='0', x2='0', y2='100%')
-                                      stop(offset='0%', stop-color='#5500f2')
-                                      stop(offset='100%', stop-color='#8f00ef')
-                                  circle.skill__circle.skill__circle--under(r="40" cx="50" cy="50")
-                                  circle.skill__circle.skill__circle--above(
-                                    r="40" cx="50" cy="50"
-                                    stroke="url(#gradient)"
-                                    transform="rotate(-180 50 50)"
-                                    stroke-dashoffset=`${j.progress}`)    
-                              span.skill__title #{j.title}
+                  +image(`content/bag.png`, 'skills-bag__img')
+              #skills-component
         .section.works
           .container.works__container
             .title.works-title Мои работы
@@ -176,6 +137,7 @@ html(lang="en")
                 .frontend__link
                   +icon(`link`, 'frontend__link-icon')
                   a(href="https://loftschool.com").loftschool__link Посмотреть сайт
+        
         .contacts-section
           .container__contacts
             .section.reviews
@@ -239,7 +201,8 @@ html(lang="en")
                           placeholder="Требуется ваша помощь")
                 button(type="submit").form__button Отправить
           include ./components/footer
-
+    
+    include ./templates/entry.pug
 
               
 

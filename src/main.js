@@ -3,6 +3,7 @@ if (process.env.NODE_ENV === "development") {
   require("file-loader!./index.pug");
 }
 
-import "./scripts/skills";
-//import "./scripts/parallax-mount";
+import "./scripts/parallax-mount";
 import "./scripts/humburger-menu";
+import "./scripts/skills";
+//import "./scripts/reviews";

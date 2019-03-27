@@ -1,7 +1,10 @@
-.welcome-section{
-  background: url('../images/content/Mountain_Baloon.png') center center no-repeat;
-  background-size: cover; 
+.welcome-section{ 
   //position: absolute;
   //z-index: 100;
-  //width: 100%;
+  width: 100%;
+
+  @include tablets(){
+    background: url('../images/content/Mountain_Baloon.png') center center no-repeat;
+    background-size: cover;
+  }
 }
