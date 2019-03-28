@@ -3,20 +3,21 @@ script(type="text/x-template")#reviews-list
     .reviews-section__title
       .title.reviews__title Что обо мне говорят
       .reviews-slider__controls
-        button.slider__control.slider__control--circle.slider__control--left
+        button(type="button" @click="slide('prev')").slider__control.slider__control--circle.slider__control--left
           +icon(`arrow-down`, 'icon__arrow icon__arrow-left')
-        button.slider__control.slider__control--circle.slider__control--right
+        button(type="button" @click="slide('next')").slider__control.slider__control--circle.slider__control--right
           +icon(`arrow-down`, 'icon__arrow icon__arrow-right')             
-    ul.reviews-slider__list
-      li.reviews-slider__item(v-for="review in reviews" :key="review[0]")
-        .quote-icon  
-          +icon(`quote`, 'quote__icon')
-        .quote
-          .quote__text {{review.text}}
-          .quote__author
-            .person-info.person-info-horizontal
-            .person-info__avatar
-              +image(`content/reviews_wowa.jpg`, 'person-info__img-small')
-            .person-info__data
-              .person-info__name {{review.name}} 
-              .person-info__occ {{review.occ}}
+    flickity(ref="flickity" :options="flickityOptions")
+      ul.reviews-slider__list
+        li.reviews-slider__item(v-for="review in reviews" :key="review[0]")
+          .quote-icon  
+            +icon(`quote`, 'quote__icon')
+          .quote
+            .quote__text {{review.text}}
+            .quote__author
+              .person-info.person-info-horizontal
+              .person-info__avatar
+                +image(`content/reviews_wowa.jpg`, 'person-info__img-small')
+              .person-info__data
+                .person-info__name {{review.name}} 
+                .person-info__occ {{review.occ}}
