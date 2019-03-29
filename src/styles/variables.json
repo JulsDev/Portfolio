@@ -5,6 +5,7 @@
   "hover-color": "#ad00ed",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
+  "bp-desktop-small": "1100px",
   "bp-tablets": "768px",
   "bp-phones": "480px"
 }

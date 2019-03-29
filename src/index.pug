@@ -12,85 +12,83 @@ html(lang="en")
     .wrapper
       include ./components/humburger-menu-popup
       .maincontent
-        .parallax-mount-section
-          .parallax__layer(data-speed="0.1")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-0.jpg")).parallax__image
-          .parallax__layer(data-speed="0.10")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-1.png")).parallax__image
-          .parallax__layer(data-speed="0.20")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-2.png")).parallax__image
-          .parallax__layer(data-speed="0.23")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-3.png")).parallax__image
-          .parallax__layer(data-speed="0.33")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-4.png")).parallax__image
-          .parallax__layer(data-speed="0.38")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-5.png")).parallax__image
-          .parallax__layer(data-speed="0.40")
-              img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image  
-          .welcome-section
-              .fullscreensection.hero
-                .container.hero__container
-                  header.header
-                    a(href="/").logo ЮА
-                    .header__menu
-                      nav.nav
-                        ul.nav__list
-                        - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
-                        each item in menu
-                          li.nav__item
-                            a(href="").nav__link #{item}
-                    .header__links
-                      ul.socials__list
-                        - var socials = ['insta', 'vk', 'github'];
-                        //- 
-                          var socials = [
-                            {socnet: "insta", link: '#'},
-                            {socnet: "vk", link: '#'},
-                            {socnet: "github", link: '#'}
+        .welcome-section
+          .parallax-mount-section
+            .parallax__layer(data-speed="0.1")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-0.jpg")).parallax__image
+            .parallax__layer(data-speed="0.10")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-1.png")).parallax__image
+            .parallax__layer(data-speed="0.20")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-2.png")).parallax__image
+            .parallax__layer(data-speed="0.23")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-3.png")).parallax__image
+            .parallax__layer(data-speed="0.33")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-4.png")).parallax__image
+            .parallax__layer(data-speed="0.28")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-5.png")).parallax__image
+            .parallax__layer(data-speed="0.30")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image           
+          
+          .fullscreensection.hero
+            .container.hero__container
+              header.header
+                a(href="/").logo ЮА
+                .header__menu
+                  nav.nav
+                    ul.nav__list
+                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+                .header__links
+                  ul.socials__list
+                    - var socials = ['insta', 'vk', 'github'];
+                    - var socialsLink = ['https://www.instagram.com/osminogka_julia/', 'https://vk.com/id2036633', 'https://github.com/JulsDev'];
+                    each item, index in socials
+                      li.socials__item
+                        a(href=socialsLink[index]).socials__link
+                          +icon(item, 'socials__icon')
+
+                include ./components/humburger-menu
+
+              .hero__content
+                .user-info
+                  .user-info__descr Личный сайт<br>веб-разработчика
+                  .user-info__name Юлия<br>Асеева
+              .hero__scroll-button
+                a(href="").scroll-down-button Скролл
+                  +icon(`scroll`, 'scroll__icon')
+          .fullscreensection.fullscreensection_centered.about
+            .container.about__container
+              .about__block
+                .about__left
+                  .person-info
+                    .person-info__avatar
+                      +image(`content/user.jpg`, 'person-info__avatar-img')
+                    .person-info__data
+                      table.person-info__table
+                        - 
+                          var data = [
+                            ['Проживаю:', 'Москва'],
+                            ['Возраст:', '28 лет'],
+                            ['Родилась:', '4 июня 1990'],
                           ]
-                        each item in socials
-                          li.socials__item
-                            a(href="").socials__link
-                              +icon(`${item}`, 'socials__icon')
-
-                    include ./components/humburger-menu
-
-                  .hero__content
-                    .user-info
-                      .user-info__descr Личный сайт<br>веб-разработчика
-                      .user-info__name Юлия<br>Асеева
-                  .hero__scroll-button
-                    a(href="").scroll-down-button Скролл
-                      +icon(`scroll`, 'scroll__icon')
-              .fullscreensection.fullscreensection_centered.about
-                .container.about__container
-                  .about__block
-                    .about__left
-                      .person-info
-                        .person-info__avatar
-                          +image(`content/user.jpg`, 'person-info__avatar-img')
-                        .person-info__data
-                          table.person-info__table
-                            - 
-                              var data = [
-                                ['Проживаю:', 'Москва'],
-                                ['Возраст:', '28 лет'],
-                                ['Родилась:', '4 июня 1990'],
-                              ]
-                            each row in data
-                              tr.person-info__data-row
-                                td.data-row__first-col #{row[0]}
-                                td.data-row__second-col #{row[1]}
-                    .about__right
-                      .person-descr
-                        .person-descr__hello Привет, меня зовут
-                        .person-descr__name Юлия Асеева
-                        .person-descr__youself
-                          p Я занимаюсь разработкой современных сайтов и приложений.
-                          p Мне нравится делать интересные и современные проекты.
-                        .person-descr__footnote
-                          p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                        each row in data
+                          tr.person-info__data-row
+                            td.data-row__first-col #{row[0]}
+                            td.data-row__second-col #{row[1]}
+                .about__right
+                  .person-descr
+                    .person-descr__hello Привет, меня зовут
+                    .person-descr__name Юлия Асеева
+                    .person-descr__youself
+                      p Я занимаюсь разработкой современных сайтов и приложений.
+                      p Мне нравится делать интересные и современные проекты.
+                    .person-descr__footnote
+                      p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        
         include ./components/triangles
+        
         .section.skills
           .container.skills__container
             .skills-descr
