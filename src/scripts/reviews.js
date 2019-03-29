@@ -9,19 +9,26 @@ new Vue({
   },
   data() {
     return {
-      reviews: {},
+      reviews: [],
       strafe: 0,
       flickityOptions: {
-        cellAlign: 'left',
-        groupCells: 2,
-        wrapAround: false,
         prevNextButtons: false,
         pageDots: false,
+        wrapAround: true,
         freeScroll: false,
+        groupCells: window.screen.width > 480 ? 2 : 1,
       }
     };
   },
   methods: {
+    arrWithRequiredImages(array) {
+      return array.map(item => {
+        const requredPic = require(`../images/content/${item["photo"]}`);
+        item["photo"] = requredPic;
+
+        return item;
+      });
+    },
     slide(direction) {
       switch (direction) {
         case 'prev':
@@ -35,7 +42,7 @@ new Vue({
   },
   created(){
     const data = require("../data/reviews.json");
-    this.reviews = data;
+    this.reviews = this.arrWithRequiredImages(data);;
   },
   mounted() {
 

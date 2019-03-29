@@ -7,9 +7,9 @@ script(type="text/x-template")#reviews-list
           +icon(`arrow-down`, 'icon__arrow icon__arrow-left')
         button(type="button" @click="slide('next')").slider__control.slider__control--circle.slider__control--right
           +icon(`arrow-down`, 'icon__arrow icon__arrow-right')             
-    flickity(ref="flickity" :options="flickityOptions")
-      ul.reviews-slider__list
-        li.reviews-slider__item(v-for="review in reviews" :key="review[0]")
+    .reviews__content
+      flickity(ref="flickity" :options="flickityOptions")
+        .reviews-slider__item(v-for="(review, index) in reviews")
           .quote-icon  
             +icon(`quote`, 'quote__icon')
           .quote
@@ -17,7 +17,7 @@ script(type="text/x-template")#reviews-list
             .quote__author
               .person-info.person-info-horizontal
               .person-info__avatar
-                +image(`content/reviews_wowa.jpg`, 'person-info__img-small')
+                img(:src="review['photo']").person-info__img-small
               .person-info__data
                 .person-info__name {{review.name}} 
                 .person-info__occ {{review.occ}}
