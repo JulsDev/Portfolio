@@ -157,8 +157,11 @@
   height: 136px;
 
   @include tablets(){
-    width: 112px;
-    height: 112px;
+    width: 116px;
+    height: 116px;
+  }
+  @include phones(){
+    margin-right: 20px;
   }
 }
 
@@ -168,12 +171,20 @@
   &--under{
     stroke: #eaeaea;
     stroke-width: 8px;
+    
+    @include tablets(){
+      stroke-width: 10px;
+    }
   }
+  
   &--above{
-    stroke-width: 12px; 
+    stroke-width: 14px; 
     stroke-dasharray: 253;
     stroke-dashoffset: 100;
     stroke: $text-color;
+    @include tablets(){
+      stroke-width: 18px;
+    }
   }
 }
 

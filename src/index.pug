@@ -103,38 +103,7 @@ html(lang="en")
           .container.works__container
             .title.works-title Мои работы
             .works-content
-              .works-slider
-                .works-slider__images
-                  +image(`content/Слой_3213.png`, 'slider__images--main')
-                  ul.slider-images__list
-                    - 
-                      var work_img = [
-                        'content/Слой_281.png', 'content/Слой_291.png', `content/Слой_271.png`, 'content/Слой_302.png'
-                      ]
-                    each item in work_img
-                      li.slider-images__item
-                        +image(`${item}`, 'slider-images__img')
-                .works-slider__control
-                  button.slider__control.slider__control--up
-                    +icon(`arrow-down`, 'icon__arrow icon__arrow-up')
-                  button.slider__control.slider__control--down
-                    +icon(`arrow-down`, 'icon__arrow icon__arrow-down')
-              .works-slider__number 4
-              .works-descr                    
-                .frontend__tech
-                  ul.frontend__tech--list
-                    li.frontend__tech--item 
-                      h3.tech-text HTML
-                    li.frontend__tech--item
-                      h3.tech-text CSS
-                    li.frontend__tech--item
-                      h3.tech-text Javascript
-                .frontend__title Сайт школы образования
-                .frontend__descr 
-                  p.frontend__descr--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .frontend__link
-                  +icon(`link`, 'frontend__link-icon')
-                  a(href="https://loftschool.com").loftschool__link Посмотреть сайт
+              #works-component
         .contacts-section
           .container__contacts
             .section.reviews
