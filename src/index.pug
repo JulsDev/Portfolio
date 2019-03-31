@@ -10,7 +10,35 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      include ./components/humburger-menu-popup
+      header.header
+        a(href="/").logo ЮА
+        .header__menu
+          nav.nav
+            ul.nav__list
+            - 
+              var menu = [
+                {title: "Главная", linkSec : "#hero"},
+                {title: "Обо мне", linkSec : "#about"},
+                {title: "Навыки", linkSec : '#skills'},
+                {title: "Работы", linkSec : '#works'},
+                {title: "Отзывы", linkSec : '#reviews'},
+                {title: "Связаться", linkSec : '#form'}
+              ]
+            each item in menu
+              li.nav__item
+                a(href=item.linkSec).nav__link #{item.title}
+        .header__links
+          ul.socials__list
+            - var socials = ['insta', 'vk', 'github'];
+            - var socialsLink = ['https://www.instagram.com/osminogka_julia/', 'https://vk.com/id2036633', 'https://github.com/JulsDev'];
+            each item, index in socials
+              li.socials__item
+                a(href=socialsLink[index]).socials__link
+                  +icon(item, 'socials__icon')
+
+        include ./components/humburger-menu
+        include ./components/humburger-menu-popup
+
       .maincontent
         .welcome-section
           .parallax-mount-section
@@ -27,30 +55,9 @@ html(lang="en")
             .parallax__layer(data-speed="0.28")
                 img(src=require("./images/content/parallax/mountain-baloon/layer-5.png")).parallax__image
             .parallax__layer(data-speed="0.30")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image           
-          
-          .fullscreensection.hero
+                img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image                    
+          .fullscreensection.hero#hero
             .container.hero__container
-              header.header
-                a(href="/").logo ЮА
-                .header__menu
-                  nav.nav
-                    ul.nav__list
-                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
-                .header__links
-                  ul.socials__list
-                    - var socials = ['insta', 'vk', 'github'];
-                    - var socialsLink = ['https://www.instagram.com/osminogka_julia/', 'https://vk.com/id2036633', 'https://github.com/JulsDev'];
-                    each item, index in socials
-                      li.socials__item
-                        a(href=socialsLink[index]).socials__link
-                          +icon(item, 'socials__icon')
-
-                include ./components/humburger-menu
-
               .hero__content
                 .user-info
                   .user-info__descr Личный сайт<br>веб-разработчика
@@ -58,7 +65,7 @@ html(lang="en")
               .hero__scroll-button
                 a(href="").scroll-down-button Скролл
                   +icon(`scroll`, 'scroll__icon')
-          .fullscreensection.fullscreensection_centered.about
+          .fullscreensection.fullscreensection_centered.about#about
             .container.about__container
               .about__block
                 .about__left
@@ -89,7 +96,7 @@ html(lang="en")
         
         include ./components/triangles
         
-        .section.skills
+        .section.skills#skills
           .container.skills__container
             .skills-descr
               h2.skills-descr__title Чем я могу быть полезна вам
@@ -99,18 +106,18 @@ html(lang="en")
               .skills-person-bag
                   +image(`content/bag.png`, 'skills-bag__img')
               #skills-component
-        .section.works
+        .section.works#works
           .container.works__container
             .title.works-title Мои работы
             .works-content
               #works-component
         .contacts-section
           .container__contacts
-            .section.reviews
+            .section.reviews#reviews
               .container.reviews__container
                 .reviews__content-wrapper
                   #reviews-component
-            .section.form
+            .section.form#form
               .container.form__container
                 .title.form__title Связаться со мной
                 .form__content

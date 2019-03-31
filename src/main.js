@@ -8,3 +8,4 @@ import "./scripts/humburger-menu";
 import "./scripts/skills";
 import "./scripts/reviews";
 import "./scripts/works";
+import "./scripts/dropdown-menu";
