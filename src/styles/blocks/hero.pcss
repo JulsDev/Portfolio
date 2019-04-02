@@ -1,6 +1,5 @@
 .hero{
   height: 100vh;
-  min-height: 650px;
 }
 
 .hero__container{
@@ -29,8 +28,10 @@
 .user-info__descr{
   text-align: right;
   margin-right: 60px;
-  opacity: .4;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 30px;
+  opacity: .4;
 
   @include tablets(){
     text-align: center;
@@ -59,6 +60,13 @@
   vertical-align: middle;
   justify-content: center;
 
+  &:hover{
+    color: $hover-color;
+    .scroll__icon{
+      fill: $hover-color;
+    }
+  }
+
   @include phones(){
     display: none;
   }
@@ -68,18 +76,14 @@
   display: inline-flex;
   vertical-align: middle;
   align-items: center;
+  margin-right: 15px;
   font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
-
-  &:hover{
-    color: $hover-color;
-    fill: $hover-color;
-  }
 }
 
 .scroll__icon{
   width: 1.55rem;
   height: 30px;
-  margin-left: 20px;
+  fill: $text-color;
 }

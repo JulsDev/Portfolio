@@ -19,10 +19,6 @@
       height: 20px;
       fill: #fff;
       opacity: 0.3;
-
-      &:hover{
-        fill: $hover-color;
-      }
     }
   }
 }
@@ -40,13 +36,24 @@
   }
 }
 
+.socials__item--rounded{
+  &:hover{
+    .socials__link{
+      border: 1px solid $hover-color; 
+    }
+    .socials__icon{
+      fill: $hover-color;
+    }
+  }
+}
+
 .socials__link{
   display: block;
   width: 25px;
   height: 31px;
   fill: $text-color;
+}
 
-  &:hover{
-    fill: $hover-color;
-  }
+.socials__icon:hover{
+  fill: $hover-color;
 }

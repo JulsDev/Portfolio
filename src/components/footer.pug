@@ -12,14 +12,14 @@ footer.footer
           ul.nav__list
             each item in menu
               li.nav__item
-                a(href="").nav__link #{item}
+                a(href=item.linkSec).nav__link #{item.title}
       .footer__data-columns
         .footer__data-col
           article.footer__text
-            p(class="footer__text-txt") Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+            p(class="footer__text-txt") Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
           ul.footer__social.socials.socials--rounded
             each item in socials
-              li.socials__item
+              li.socials__item.socials__item--rounded
                 a(href="").socials__link
                   +icon(`${item}`, 'socials__icon')
         .footer__data-col

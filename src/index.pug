@@ -10,88 +10,93 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      include ./components/humburger-menu-popup
+      header.header
+        a(href="/").logo ЮА
+        .header__menu
+          nav.nav
+            ul.nav__list
+            - 
+              var menu = [
+                {title: "Главная", linkSec : "#hero"},
+                {title: "Обо мне", linkSec : "#about"},
+                {title: "Навыки", linkSec : '#skills'},
+                {title: "Работы", linkSec : '#works'},
+                {title: "Отзывы", linkSec : '#reviews'},
+                {title: "Связаться", linkSec : '#form'}
+              ]
+            each item in menu
+              li.nav__item
+                a(href=item.linkSec).nav__link #{item.title}
+        .header__links
+          ul.socials__list
+            - var socials = ['insta', 'vk', 'github'];
+            - var socialsLink = ['https://www.instagram.com/osminogka_julia/', 'https://vk.com/id2036633', 'https://github.com/JulsDev'];
+            each item, index in socials
+              li.socials__item
+                a(href=socialsLink[index]).socials__link
+                  +icon(item, 'socials__icon')
+
+        include ./components/humburger-menu
+        include ./components/humburger-menu-popup
+
       .maincontent
-        //.parallax-mount-section
-          .parallax__layer(data-speed="0.1")
-              img(src=require("images/content/parallax/mountain/Sky.png")).parallax__image
-          .parallax__layer(data-speed="0.20")
-              img(src=require("images/content/parallax/mountain/Mountain.png")).parallax__image
-          .parallax__layer(data-speed="0.30")
-              img(src=require("images/content/parallax/mountain/Baloon.png")).parallax__image
-          .parallax__layer(data-speed="0.33")
-              img(src=require("images/content/parallax/mountain/Cloud.png")).parallax__image
-          .parallax__layer(data-speed="0.43")
-              img(src=require("images/content/parallax/mountain/Man.png")).parallax__image
-          .parallax__layer(data-speed="0.48")
-              img(src=require("images/content/parallax/mountain/Mountain1.png")).parallax__image
-          .parallax__layer(data-speed="0.50")
-              img(src=require("images/content/parallax/mountain/White.png")).parallax__image  
         .welcome-section
-              .fullscreensection.hero
-                .container.hero__container
-                  header.header
-                    a(href="/").logo ЮА
-                    .header__menu
-                      nav.nav
-                        ul.nav__list
-                        - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
-                        each item in menu
-                          li.nav__item
-                            a(href="").nav__link #{item}
-                    .header__links
-                      ul.socials__list
-                        - var socials = ['insta', 'vk', 'github'];
-                        //- 
-                          var socials = [
-                            {socnet: "insta", link: '#'},
-                            {socnet: "vk", link: '#'},
-                            {socnet: "github", link: '#'}
+          .parallax-mount-section
+            .parallax__layer(data-speed="0.1")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-0.jpg")).parallax__image
+            .parallax__layer(data-speed="0.10")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-1.png")).parallax__image
+            .parallax__layer(data-speed="0.20")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-2.png")).parallax__image
+            .parallax__layer(data-speed="0.23")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-3.png")).parallax__image
+            .parallax__layer(data-speed="0.33")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-4.png")).parallax__image
+            .parallax__layer(data-speed="0.28")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-5.png")).parallax__image
+            .parallax__layer(data-speed="0.30")
+                img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image                    
+          .fullscreensection.hero#hero
+            .container.hero__container
+              .hero__content
+                .user-info
+                  .user-info__descr Личный сайт<br>веб-разработчика
+                  .user-info__name Юлия<br>Асеева
+              .hero__scroll-button
+                a(href="").scroll-down-button Скролл
+                  +icon(`scroll`, 'scroll__icon')
+          .fullscreensection.fullscreensection_centered.about#about
+            .container.about__container
+              .about__block
+                .about__left
+                  .person-info
+                    .person-info__avatar
+                      +image(`content/user.jpg`, 'person-info__avatar-img')
+                    .person-info__data
+                      table.person-info__table
+                        - 
+                          var data = [
+                            ['Проживаю:', 'Москва'],
+                            ['Возраст:', '28 лет'],
+                            ['Родилась:', '4 июня 1990'],
                           ]
-                        each item in socials
-                          li.socials__item
-                            a(href="").socials__link
-                              +icon(`${item}`, 'socials__icon')
-
-                    include ./components/humburger-menu
-
-                  .hero__content
-                    .user-info
-                      .user-info__descr Личный сайт<br>веб-разработчика
-                      .user-info__name Юлия<br>Асеева
-                  .hero__scroll-button
-                    a(href="").scroll-down-button Скролл
-                      +icon(`scroll`, 'scroll__icon')
-              .fullscreensection.fullscreensection_centered.about
-                .container.about__container
-                  .about__block
-                    .about__left
-                      .person-info
-                        .person-info__avatar
-                          +image(`content/user.jpg`, 'person-info__avatar-img')
-                        .person-info__data
-                          table.person-info__table
-                            - 
-                              var data = [
-                                ['Проживаю:', 'Москва'],
-                                ['Возраст:', '28 лет'],
-                                ['Родилась:', '4 июня 1990'],
-                              ]
-                            each row in data
-                              tr.person-info__data-row
-                                td.data-row__first-col #{row[0]}
-                                td.data-row__second-col #{row[1]}
-                    .about__right
-                      .person-descr
-                        .person-descr__hello Привет, меня зовут
-                        .person-descr__name Юлия Асеева
-                        .person-descr__youself
-                          p Я занимаюсь разработкой современных сайтов и приложений.
-                          p Мне нравится делать интересные и современные проекты.
-                        .person-descr__footnote
-                          p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                        each row in data
+                          tr.person-info__data-row
+                            td.data-row__first-col #{row[0]}
+                            td.data-row__second-col #{row[1]}
+                .about__right
+                  .person-descr
+                    .person-descr__hello Привет, меня зовут
+                    .person-descr__name Юлия Асеева
+                    .person-descr__youself
+                      p Я занимаюсь разработкой современных сайтов и приложений.
+                      p Мне нравится делать интересные и современные проекты.
+                    .person-descr__footnote
+                      p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        
         include ./components/triangles
-        .section.skills
+        
+        .section.skills#skills
           .container.skills__container
             .skills-descr
               h2.skills-descr__title Чем я могу быть полезна вам
@@ -99,123 +104,20 @@ html(lang="en")
                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .skills-block
               .skills-person-bag
-                +image(`content/bag.png`, 'skills-bag__img')
-              .skills-person-block
-                ul.skills-person
-                  - 
-                    var skills = [
-                      ['Frontend', 
-                        [
-                            {title: "HTML5", progress: 230},
-                            {title: "CSS3", progress: 230},
-                            {title: "JavaScript", progress: 250},
-                            {title: "Jquery и Vue.js", progress: 200}
-                        ]
-                      ],
-                      ['Workflow', 
-                        [
-                            {title: "GIT",progress: 220},
-                            {title: "Terminal", progress: 170},
-                            {title: "Gulp", progress: 260},
-                            {title: "Webpack",progress: 260}
-                        ]
-                      ],
-                    ]
-                  each i in skills
-                    li.skills-person__item
-                      .skills-row
-                        h3.skills-row__title #{i[0]}
-                        ul.skills-row__list
-                          each j in i[1]
-                            li.skills-row__item
-                              .skill
-                                svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
-                                  lineargradient#gradient(x1='0', y1='0', x2='0', y2='100%')
-                                      stop(offset='0%', stop-color='#5500f2')
-                                      stop(offset='100%', stop-color='#8f00ef')
-                                  circle.skill__circle.skill__circle--under(r="40" cx="50" cy="50")
-                                  circle.skill__circle.skill__circle--above(
-                                    r="40" cx="50" cy="50"
-                                    stroke="url(#gradient)"
-                                    transform="rotate(-180 50 50)"
-                                    stroke-dashoffset=`${j.progress}`)    
-                              span.skill__title #{j.title}
-        .section.works
+                  +image(`content/bag.png`, 'skills-bag__img')
+              #skills-component
+        .section.works#works
           .container.works__container
             .title.works-title Мои работы
             .works-content
-              .works-slider
-                .works-slider__images
-                  +image(`content/Слой_3213.png`, 'slider__images--main')
-                  ul.slider-images__list
-                    - 
-                      var work_img = [
-                        'content/Слой_281.png', 'content/Слой_291.png', `content/Слой_271.png`, 'content/Слой_302.png'
-                      ]
-                    each item in work_img
-                      li.slider-images__item
-                        +image(`${item}`, 'slider-images__img')
-                .works-slider__control
-                  button.slider__control.slider__control--up
-                    +icon(`arrow-down`, 'icon__arrow icon__arrow-up')
-                  button.slider__control.slider__control--down
-                    +icon(`arrow-down`, 'icon__arrow icon__arrow-down')
-              .works-slider__number 4
-              .works-descr                    
-                .frontend__tech
-                  ul.frontend__tech--list
-                    li.frontend__tech--item 
-                      h3.tech-text HTML
-                    li.frontend__tech--item
-                      h3.tech-text CSS
-                    li.frontend__tech--item
-                      h3.tech-text Javascript
-                .frontend__title Сайт школы образования
-                .frontend__descr 
-                  p.frontend__descr--text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .frontend__link
-                  +icon(`link`, 'frontend__link-icon')
-                  a(href="https://loftschool.com").loftschool__link Посмотреть сайт
+              #works-component
         .contacts-section
           .container__contacts
-            .section.reviews
+            .section.reviews#reviews
               .container.reviews__container
-                .reviews-section__title
-                  .title.reviews__title Что обо мне говорят
-                  .reviews-slider__controls
-                    a(href="").slider__control.slider__control--circle.slider__control--left
-                      +icon(`arrow-down`, 'icon__arrow icon__arrow-left')
-                    a(href="").slider__control.slider__control--circle.slider__control--right
-                      +icon(`arrow-down`, 'icon__arrow icon__arrow-right')
-                ul.reviews-slider__list
-                  - 
-                    var reviews = [
-                      {
-                        text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                        name: "Ковальчук Дмитрий", 
-                        occ: "Основатель LoftSchool",
-                        photo: "reviews_dima.jpg"
-                      },
-                      {
-                        text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                        name: "Владимир Сабанцев", 
-                        occ: "Преподаватель",
-                        photo: "reviews_wowa.jpg"
-                      },
-                    ]
-                  each item in reviews
-                    +icon(`quote`, 'quote__icon')
-                    li.reviews-slider__item
-                      quote
-                        .quote__text #{item.text}
-                        .quote__author
-                          .person-info.person-info-horizontal
-                          .person-info__avatar
-                            +image(`content/${item.photo}`, 'person-info__img-small')
-                          .person-info__data
-                            .person-info__name #{item.name} 
-                            .person-info__occ #{item.occ}
-            .section.form
+                .reviews__content-wrapper
+                  #reviews-component
+            .section.form#form
               .container.form__container
                 .title.form__title Связаться со мной
                 .form__content
@@ -224,12 +126,12 @@ html(lang="en")
                       label.form__label Введите ваше имя
                       .form__input
                         +icon(`user`, 'form__block-icon')
-                        input#name.form__block-input(type='text', name='name', placeholder="Ковальчук Дмитрий", required='')
+                        input#name.form__block-input(type='text', name='name', placeholder="Иванов Иван", required='')
                     .form__block.form__block--email
                       label.form__label Введите ваш email
                       .form__input
                         +icon(`envelope`, 'form__block-icon')
-                        input#email.form__block-input(type='email', name='email', placeholder='loftschool@study.com', required='')             
+                        input#email.form__block-input(type='email', name='email', placeholder='ivanov@gmail.com', required='')             
                   .form__row
                     .form__block
                       label.form__label Сообщение к письму
@@ -239,7 +141,8 @@ html(lang="en")
                           placeholder="Требуется ваша помощь")
                 button(type="submit").form__button Отправить
           include ./components/footer
-
+    
+    include ./templates/entry.pug
 
               
 

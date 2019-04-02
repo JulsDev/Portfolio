@@ -1,0 +1,58 @@
+script(type="text/x-template")#slider-container
+  .works-slider
+    display(
+      :works="works",
+      :currentWork="currentWork",
+      :currentIndex="currentIndex",
+      @slide="handleSlide"
+    )
+    info(
+      :currentWork="currentWork"
+    )
+
+script(type="text/x-template")#slider-display
+  .work-slider-gallery(:data-slide="currentIndex + 1")
+    .works-slider-content
+      .works-slider__images
+        img(:src="currentWork.photo").slider__images--main
+        slider(
+          :works="reversedWorks"
+          :currentWork="currentWork"
+        )    
+        buttns(
+          @slide="direction => $emit('slide', direction)"
+        )
+
+script(type="text/x-template")#slider-list
+  ul.slider-images__list 
+    li.slider-images__item(
+      v-for="work in works" :key="work.id"
+      :class="{active: currentWork.id === work.id}"
+    )
+      a(href="#").slider-images__link
+        img(:src="work.photo" alt="").slider-images__img
+
+script(type="text/x-template")#slider-btns    
+  .works-slider__control
+    button(@click.prevent="$emit('slide', 'prev')").slider__control.slider__control--up
+      +icon(`arrow-down`, 'icon__arrow icon__arrow-up')
+    button(@click.prevent="$emit('slide', 'next')").slider__control.slider__control--down
+      +icon(`arrow-down`, 'icon__arrow icon__arrow-down')
+
+script(type="text/x-template")#slider-info
+  .works-descr                    
+    .frontend__tech
+      tags(
+        :tagsArray="tagsArray"
+      )
+    .frontend__title {{currentWork.title}}
+    .frontend__descr 
+      p.frontend__descr--text {{currentWork.desc}}
+    .frontend__link
+      +icon(`link`, 'frontend__link-icon')
+      a(href="https://loftschool.com").loftschool__link Посмотреть сайт
+
+script(type="text/x-template")#slider-tags
+  ul.frontend__tech--list 
+    li.frontend__tech--item(v-for="tag in tagsArray")
+      .tech-text {{tag}}

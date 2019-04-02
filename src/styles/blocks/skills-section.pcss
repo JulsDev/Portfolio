@@ -47,7 +47,7 @@
   padding-left: 50px;
   opacity: 0.5;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 30px;
   
   @include tablets(){
@@ -152,19 +152,40 @@
 }
 
 .skill{
+  position: relative;
   width: 136px;
   height: 136px;
 
   @include tablets(){
-    width: 112px;
-    height: 112px;
+    width: 116px;
+    height: 116px;
+  }
+  @include phones(){
+    margin-right: 20px;
   }
 }
 
 .skill__circle{
-  display: flex;
   fill: transparent;
-  stroke-width: 14px;
+  
+  &--under{
+    stroke: #eaeaea;
+    stroke-width: 8px;
+    
+    @include tablets(){
+      stroke-width: 10px;
+    }
+  }
+  
+  &--above{
+    stroke-width: 14px; 
+    stroke-dasharray: 253;
+    stroke-dashoffset: 100;
+    stroke: $text-color;
+    @include tablets(){
+      stroke-width: 18px;
+    }
+  }
 }
 
 .skill__title{

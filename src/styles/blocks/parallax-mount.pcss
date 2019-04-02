@@ -1,9 +1,15 @@
 .parallax-mount-section{
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-  min-height: 1300px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  z-index: -10;
+  overflow: hidden; 
+
+  @include tablets(){
+    display: none;
+  }
 }
 
 .parallax__layer{
@@ -38,27 +44,37 @@
   }
   &:nth-child(4){
     .parallax__image{
-      top: 400px;
+      top: 480px;
       left: 0;
     }
   }
   &:nth-child(5){
     .parallax__image{
-      top: 500px;
-      left: -20%;
+      top: 37%;
+      left: -15%;
     }
   }
   &:nth-child(6){
     .parallax__image{
-      right: -40%;
+      right: -10%;
       bottom: 0;
+
+      @include desktopSmall(){
+        right: 0;
+        width: 100%;
+      }
     }
   }
-
   &:nth-child(7){
     .parallax__image{
       left: 0;
-      bottom: 0;
+      bottom: -500px;
+      width: 100%;
+
+      @include desktopSmall {
+        bottom: -35%;
+        height: 60%;
+      }
     }
   }
 }
