@@ -1,9 +1,8 @@
 .humburger-menu-popup
   ul.menu-popup__list
-    - var menupopup = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
-    each item in menupopup
+    each item in menu
       li.menu-popup__item 
-        a(href="#").menu-popup__link #{item}
+        a(href=item.linkSec).nav__link #{item.title}
   .header__links
     ul.socials__list
      - var socials = ['insta', 'vk', 'github'];

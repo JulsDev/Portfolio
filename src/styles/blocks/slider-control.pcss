@@ -17,9 +17,15 @@
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: .6s;
 
   &:hover{
-    background: &hover-color;
+    background: $hover-color;
+    opacity: 0.95;
+
+    .icon__arrow{
+      opacity: 0.5;
+    }
   }
   
   &--circle{
@@ -29,6 +35,10 @@
 
     .icon__arrow{
       fill: #2d3c4e;
+    }
+    &:hover{
+      background: none;
+      opacity: 0.5;
     }
   }
 }
@@ -43,7 +53,6 @@
   }
   &-up{
     transform: rotate(-90deg);
-    opacity: 0.5;
   }
   &-left{
     transform: rotate(180deg);
