@@ -1,0 +1,56 @@
+.card-button{
+  display: block;
+  fill: $text-color;
+  width: 15px;
+  height: 12px;
+
+  &--save{
+    background: svg-load(
+        "tick.svg",
+        fill=rgba(#00d70a, 1),
+        width=100%,
+        height=100%
+      )
+      center center no-repeat;
+
+    margin-right: 20px;
+    transition: all .3s;
+  }
+
+  &--remove{
+    background: svg-load(
+        "remove.svg",
+        fill=rgba(#bf2929, 1),
+        width=100%,
+        height=100%
+      )
+      center center no-repeat;
+
+    transition: all .3s;
+  }
+
+  &--edit{
+    background: svg-load(
+        "pencil.svg",
+        fill=rgba($text-color, 0.5),
+        width=100%,
+        height=100%
+      )
+      center center no-repeat;
+
+    margin-right: 20px;
+    transition: all .3s;
+  }
+
+  &--trash{
+    background: svg-load(
+        "trash.svg",
+        fill=rgba($text-color, 0.5),
+        width=100%,
+        height=100%
+      )
+      center center no-repeat;
+
+    transition: all .3s;
+  }
+}
