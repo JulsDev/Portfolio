@@ -26,16 +26,16 @@
   export default {
     name:"SkillCard",
     props:{
-      skillsInfo: Array
+      skillsInfo: Object
     },
     data(){
       return{  
       }
     },
     components:{
-      AddButton: () => import('./add-button.vue'),
+      AddButton: () => import('./button-add.vue'),
     },
   }
 </script>
 
-<style lang="pcss"></style>
+<style lang="postcss"></style>

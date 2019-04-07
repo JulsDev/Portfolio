@@ -6,6 +6,12 @@
     .admin-section
       .admin-container
         About(:skillsInfo="skillsInfo")
+    .admin-section
+      .admin-container
+        Works
+    .admin-section
+      .admin-container
+        Reviews
 
 </template>
 
@@ -22,6 +28,8 @@ export default {
     Header: () => import('./components/header.vue'),
     Navigation: () => import('./components/navigation.vue'),
     About: () => import('./components/about.vue'),
+    Works: () => import('./components/works.vue'),
+    Reviews: () => import('./components/reviews.vue'),
   },
   created(){
     const data = require("../data/skills.json");

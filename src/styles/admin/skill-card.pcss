@@ -1,14 +1,15 @@
 .skill-card{
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-
-/////// Header card
 .card-header{
   display: flex;
   align-items: center;
   width: 100%;
+  height: 20%;
+  margin-bottom: 30px;
 }
 
 .card-header__title{
@@ -32,19 +33,25 @@
 /////// Content card
 .card-content{
   display: flex;
-  padding: 30px 0;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   width: 100%;
-  height: 152px;
+  height: 60%;
+ 
+  &__new-card{
+    display: flex;
+  }
 }
 
 .card-skills__table{
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 
 .card-skills__row{
+  display:flex;
+  width: 100%;
   margin-bottom: 10px;
 
   &:last-child{
@@ -52,25 +59,32 @@
   }
 }
 .card-skills__col{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   font-family: "Open Sans";
   font-size: 16px;
   font-weight: 400;
   
   &-name{
     max-width: 72px;
-    width: 100%;
-    padding-right: 45px;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 400;
+    padding-right: 40%;
+
+    @include tablets{
+      padding-right: 25%;
+    }
   }
 
   &-percent{
-    padding-right: 14px;
+    padding-right: 20%;
   }
 
   &-sign{
-    padding-right: 61px;
+    padding-right: 10%;
+
+    @include tablets{
+      padding-right: 20%;
+    }
   }
 
   &-button{
@@ -85,19 +99,31 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  height: 40px;
+  height: 18%;
 }
 
 .new-skill{
+  width: 60%;
   margin-right: 10px;
+  outline: none;
   border: 0;
   border-bottom: 1px solid $text-color;
   opacity: 0.4;
+
+  @include tablets{
+    width: 50%;
+  }
 }
+
 .new-procent{
-  width: 74px;
+  width: 30%;
   margin-right: 30px;
+  outline: none;
   border: 0;
   border-bottom: 1px solid $text-color;
   opacity: 0.4;
+
+  @include tablets{
+    margin-right: 10px;
+  }
 }

@@ -1,4 +1,7 @@
-.skill-cards,
+.skill-cards{
+  display: flex;
+}
+
 .skill-cards__list{
   display: flex;
   flex-wrap: wrap;
@@ -17,4 +20,19 @@
   padding: 30px 28px;
   box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
   background-color: #ffffff;
+
+  &-new{
+    @include tablets{
+      display: none;
+    }
+  }
+
+  @include tablets{
+    width: 45%;
+  }
+
+  @include phones{
+    width: 100%;
+    margin-right: 0;
+  }
 }

@@ -1,7 +1,7 @@
 <template lang="pug">
   .skill-cards
     ul.skill-cards__list
-      li.skill-cards__item
+      li.skill-cards__item.skill-cards__item-new
         SkillCardNew
       li.skill-cards__item
         SkillCard(:skillsInfo="skillsInfo[0]")
@@ -27,4 +27,4 @@
   }
 </script>
 
-<style lang="pcss" scoped></style>
+<style lang="postcss" scoped></style>
