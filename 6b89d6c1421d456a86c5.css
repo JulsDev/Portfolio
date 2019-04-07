@@ -1,0 +1,1 @@
+.loadButton{display:block;width:11.3125rem;height:3.125rem;border-radius:25px;background-color:#fff;background-image:-webkit-gradient(linear,left top,right top,from(#006aed),to(#3f35cb));background-image:linear-gradient(90deg,#006aed,#3f35cb);color:#fff;text-transform:uppercase}@media screen and (max-width:768px){.loadButton{display:none}}
