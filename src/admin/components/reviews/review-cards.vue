@@ -5,7 +5,7 @@
         ReviewCardNew
       li.review-card__item
         .review-card__header
-          img(src="../../images/content/reviews_wowa.jpg").review-card__avatar
+          img(src="../../../images/content/reviews_wowa.jpg").review-card__avatar
           .review-card__descr
             .review-descr__name Владимир Сабанцев
             .review-descr__prof Преподаватель
@@ -21,7 +21,7 @@
               button(type="button" style="").card-button.card-button--remove
       li.review-card__item
         .review-card__header
-          img(src="../../images/content/reviews_wowa.jpg").review-card__avatar
+          img(src="../../../images/content/reviews_wowa.jpg").review-card__avatar
           .review-card__descr
             .review-descr__name Владимир Сабанцев
             .review-descr__prof Преподаватель

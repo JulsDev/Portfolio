@@ -13,7 +13,7 @@ export default {
 
 <style lang="postcss">
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .review-card-new{
     display: flex;

@@ -3,7 +3,7 @@
     .works-edit__title Редактирование работы
     .works-edit__content
       .works-edit__loader-tabl
-        img(src="../../images/content/works/slider-1.jpg").works-tabl-image
+        img(src="../../../images/content/works/slider-1.jpg").works-tabl-image
         button(type="button").changeButton Изменить превью
       .works-edit__loader
         .works-edit__loader-text
@@ -47,9 +47,9 @@
   export default {
     name: "WorksEdit",
     components: {
-      AddButton: () => import('./button-add.vue'),
-      LoadButton: () => import('./button-load.vue'),
-      SaveButton: () => import('./button-save.vue'),
+      AddButton: () => import('../common/button-add.vue'),
+      LoadButton: () => import('../common/button-load.vue'),
+      SaveButton: () => import('../common/button-save.vue'),
     },
   }
 </script>

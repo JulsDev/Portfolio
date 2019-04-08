@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="pcss">
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .loadButton{
     display: block;

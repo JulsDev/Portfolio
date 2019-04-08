@@ -5,7 +5,7 @@
         WorksCardNew
       li.works-card__item.works-card__item-opacity
         .works-card__header
-          img(src="../../images/content/works/slider-2.jpg").works-card__image
+          img(src="../../../images/content/works/slider-2.jpg").works-card__image
           ul.works-form__tags.form__tags-list
             li.form-tags__item.form__tags HTML
             li.form-tags__item.form__tags CSS
@@ -24,7 +24,7 @@
               button(type="button" style="").card-button.card-button--remove
       li.works-card__item
         .works-card__header
-          img(src="../../images/content/works/slider-1.jpg").works-card__image
+          img(src="../../../images/content/works/slider-1.jpg").works-card__image
         .works-card__content
           .works-card__title Сайт школы образования
           .works-card__descr 

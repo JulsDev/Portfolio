@@ -1,12 +1,14 @@
 <template lang="pug">
-  section.about
-    .about-block__title
-      .title.title__about Блок «Обо мне»
-      .about-block__button
-        AddButton.addButton__small 
-        .addButton__text Добавить группу
-    .about-block__content
-      SkillCardS(:skillsInfo="skillsInfo")
+  .admin-section
+    .admin-container
+      section.about
+        .about-block__title
+          .title.title__about Блок «Обо мне»
+          .about-block__button
+            AddButton.addButton__small 
+            .addButton__text Добавить группу
+        .about-block__content
+          SkillCardS(:skillsInfo="skillsInfo")
 </template>
 
 
@@ -21,7 +23,7 @@
       }
     },
     components: {
-      AddButton: () => import('./button-add.vue'),
+      AddButton: () => import('../common/button-add.vue'),
       SkillCardS: () => import('./skill-cards.vue'),
     },
   }
@@ -30,7 +32,7 @@
 
 <style lang="postcss" scoped>
   
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
   
   .about{
     display: flex;

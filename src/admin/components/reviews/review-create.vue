@@ -32,7 +32,7 @@
   export default {
     name: "Reviews",
     components: {
-      SaveButton: () => import('./button-save.vue'),
+      SaveButton: () => import('../common/button-save.vue'),
     },
   }
 </script>

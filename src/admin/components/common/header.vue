@@ -2,7 +2,7 @@
   header.header
     .header-content
       .admin-info
-        img(src="../../images/content/user.jpg").admin-info__image
+        img(src="../../../images/content/user.jpg").admin-info__image
         .admin-info__name Юлия Асеева
         .admin-info__title Панель администрирования
       .admin-button
@@ -13,7 +13,7 @@
 
 <style lang="postcss" scoped>
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
   
   .header{
     display: flex;

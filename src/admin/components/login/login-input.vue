@@ -27,7 +27,7 @@
     },
     
     components: {
-      ErrorsTooltip: () => import('./errors-tooltip.vue'),
+      ErrorsTooltip: () => import('../common/errors-tooltip.vue'),
     },
   }
 
@@ -36,7 +36,7 @@
 
 <style lang="postcss" scoped>
   
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .login-input{
     display: flex;

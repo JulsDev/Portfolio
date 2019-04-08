@@ -66,53 +66,33 @@
       LoginInput: () => import('./login-input.vue'),
     },
     methods:{
-      auth(){
-        this.$validate().then(success => {
-          if(!success) return;
-
-          axios.post('/auth', {
+      async auth(){
+        // ждем, пока выполнится валидация
+        if((await this.$validate()) === false) return;
+        this.disableSubmit = true;
+        
+        try {
+          // отправление данных на сервер
+          const response = await axios.post('https://webdev-api.loftschool.com/login', {
             name: this.user.name,
             password: this.user.password
-          })
-            .then(function (response) {
-              localStorage.setItem('token', response.data.token);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        });
+          });
+
+          localStorage.setItem("token", response.data.token);
+          axios.defaults.headers["Authorization"] = `Bearer ${response.data.token}`;
+          this.$router.replace("/");
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
-    }
-
-  //     async auth(){
-  //       // ждем, пока выполнится валидация
-  //       if((await this.$validate()) === false) return;
-  //       this.disableSubmit = true;
-        
-  //       try {
-  //         // отправление данных на сервер
-  //         axios.post('/auth', {
-  //           name: this.user.name,
-  //           password: this.user.password
-  //         })
-  //           .then(function (response) {
-  //             localStorage.setItem('token', response.data.token);
-  //             console.log("Отправили данные");
-  //           })
-  //       // если произошла ошибка при отправке
-  //       }catch(error) {
-  //         console.log(error);
-  //       }
-  //     }
-  //   }
-  // }
+  }
 </script>
 
 
 <style lang="postcss" scoped>
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .login{
     display: flex;

@@ -1,8 +1,10 @@
 <template lang="pug">
-  section.works
-    .title.title-works Блок «Работы»
-    WorksEdit
-    WorksCards
+  .admin-section
+    .admin-container
+      section.works
+        .title.title-works Блок «Работы»
+        WorksEdit
+        WorksCards
 </template>
 
 

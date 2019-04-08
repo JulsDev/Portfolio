@@ -1,8 +1,10 @@
 <template lang="pug">
-  section.reviews
-    .title.title-reviews Блок «Отзывы»
-    ReviewCreate
-    ReviewCards
+  .admin-section
+    .admin-container
+      section.reviews
+        .title.title-reviews Блок «Отзывы»
+        ReviewCreate
+        ReviewCards
 </template>
 
 

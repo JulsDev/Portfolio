@@ -5,7 +5,7 @@ const slider = {
   props:{
     works: Array,
     currentWork: Object,
-    currentIndex: Number
+    //currentIndex: Number
   },
 };
 
@@ -79,7 +79,7 @@ new Vue({
   methods:{
     makeInfiniteLoopForCurIndex(value){
       const worksAmount = this.works.length - 1;
-      if(value > worksAmount) this.works.length = 0;
+      if(value > worksAmount) this.currentIndex  = 0;
       if(value < 0) this.currentIndex = worksAmount;
     },
     makeArrWithRequiredImages(data){
@@ -98,7 +98,12 @@ new Vue({
           this.currentIndex++;
           break;
       }
-    }
+    },
+    // oneSlideClick(index){
+    //   this.currentIndex = index;
+    //   console.log(this.currentIndex);
+    //   console.log(index);
+    // }
   },
   created(){
     const data = require('../data/works.json');

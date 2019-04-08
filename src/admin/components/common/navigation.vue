@@ -26,7 +26,7 @@
 
 <style lang="postcss" scoped>
 
-  @import "../../styles/mixins.pcss";
+  @import "../../../styles/mixins.pcss";
 
   .navigation{
     display: flex;

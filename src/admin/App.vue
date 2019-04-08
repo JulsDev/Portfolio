@@ -1,22 +1,20 @@
 <template lang="pug">
   .admin-content
-    Header
-    Navigation(:menu="menu")
-
-    .admin-section
-      .admin-container
-        About(:skillsInfo="skillsInfo")
-    .admin-section
-      .admin-container
-        Works
-    .admin-section
-      .admin-container
-        Reviews
-    Login
+    template
+      Header
+      Navigation(:menu="menu")
+      router-view
+    // About(:skillsInfo="skillsInfo")
+    // Works
+    // Reviews
+    // Login
 
 </template>
 
-<script> 
+<script>
+
+import { mapState, mapActions, mapGetters } from "vuex";
+
 export default {
   
   data(){
@@ -26,12 +24,12 @@ export default {
     }
   },
   components: {
-    Header: () => import('./components/header.vue'),
-    Navigation: () => import('./components/navigation.vue'),
-    About: () => import('./components/about.vue'),
-    Works: () => import('./components/works.vue'),
-    Reviews: () => import('./components/reviews.vue'),
-    Login: () => import('./components/login.vue'),
+    Header: () => import('./components/common/header.vue'),
+    Navigation: () => import('./components/common/navigation.vue'),
+    // About: () => import('./components/about/about.vue'),
+    // Works: () => import('./components/works/works.vue'),
+    // Reviews: () => import('./components/reviews/reviews.vue'),
+    // Login: () => import('./components/login/login.vue'),
   },
   created(){
     const data = require("../data/skills.json");

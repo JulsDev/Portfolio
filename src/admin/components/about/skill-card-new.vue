@@ -16,7 +16,7 @@
 <script>
   export default {
     components:{
-      AddButton: () => import('./button-add.vue'),
+      AddButton: () => import('../common/button-add.vue'),
     },
   }
 </script>
