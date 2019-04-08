@@ -49,6 +49,6 @@
 </script>
 
 
-<style lang="pcss" scoped>
+<style lang="postcss" scoped>
 
 </style>

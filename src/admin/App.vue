@@ -12,10 +12,11 @@
     .admin-section
       .admin-container
         Reviews
+    Login
 
 </template>
 
-<script>
+<script> 
 export default {
   
   data(){
@@ -30,6 +31,7 @@ export default {
     About: () => import('./components/about.vue'),
     Works: () => import('./components/works.vue'),
     Reviews: () => import('./components/reviews.vue'),
+    Login: () => import('./components/login.vue'),
   },
   created(){
     const data = require("../data/skills.json");

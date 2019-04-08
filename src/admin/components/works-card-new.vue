@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 
   @import "../../styles/mixins.pcss";
 
@@ -41,6 +41,7 @@ export default {
       align-items: center;
     }
   }
+
   .works-card-new__icon{
     position: relative;
     width: 150px;
@@ -49,25 +50,25 @@ export default {
     border: 3px solid #ffff;
     margin-bottom: 30px;
 
+    &:after{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "+";
+      color: #ffffff;
+      font-size: 72px;
+      font-weight: 200;
+
+      @include phones{
+        font-size: 42px;
+      }
+    }
+
     @include phones{
       width: 50px;
       height: 50px;
       margin-right: 10px;
-    }
-  }
-
-  .works-card-new__icon:after{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    content: "+";
-    color: #ffffff;
-    font-size: 72px;
-    font-weight: 200;
-
-    @include phones{
-      font-size: 42px;
     }
   }
 
@@ -77,4 +78,5 @@ export default {
     font-size: 18px;
     font-weight: 700;
   }
+
 </style>
