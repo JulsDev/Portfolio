@@ -1,22 +1,41 @@
 <template lang="pug">
   nav.navigation
     .navigation-content
-      ul.nav-list(v-for="item in menu")
-        li.nav-item
-          a(href="#").nav-item__link {{item}}
+      ul.nav-list
+        router-link.nav-item(
+          v-for="(route, index) in routes"
+          :key="index"
+          tag="li"
+          :to="route.path"
+          )
+          a(href="#").nav-item__link {{route.title}}
 </template>
 
 <script>
 
   export default {
     name: "Navigation",
-    props:{
-      menu: Array
-    },
+    // props:{
+    //   menu: Array
+    // },
 
     data(){
-      return{  
-      }
+      return{
+        routes: [
+          {
+            title: "Обо мне",
+            path: "/"
+          },
+          {
+            title: "Работы",
+            path: "/works"
+          },
+          {
+            title: "Отзывы",
+            path: "/reviews"
+          }
+        ]  
+      };
     }
   }
 

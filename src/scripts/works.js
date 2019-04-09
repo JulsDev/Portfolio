@@ -99,11 +99,11 @@ new Vue({
           break;
       }
     },
-    // oneSlideClick(index){
-    //   this.currentIndex = index;
-    //   console.log(this.currentIndex);
-    //   console.log(index);
-    // }
+    oneSlideClick(index){
+      // this.currentIndex = index;
+      // console.log(this.currentIndex);
+      // console.log(index);
+    }
   },
   created(){
     const data = require('../data/works.json');

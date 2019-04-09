@@ -2,12 +2,12 @@
   .admin-content
     template
       Header
-      Navigation(:menu="menu")
+      Navigation
       router-view
-    // About(:skillsInfo="skillsInfo")
-    // Works
-    // Reviews
-    // Login
+      // About(:skillsInfo="skillsInfo")
+      // Works
+      // Reviews
+      // Login
 
 </template>
 
@@ -19,7 +19,6 @@ export default {
   
   data(){
     return{
-      menu: ['Обо мне','Работы','Отзывы'],
       skillsInfo: {}
     }
   },
@@ -43,10 +42,10 @@ export default {
 
 <style lang="pcss">
   
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&subset=cyrillic');
   @import "normalize.css";
   @import "../styles/mixins.pcss";
   @import "../styles/layout/base.pcss";
-
   @import '../styles/admin/*.pcss';
 
 </style>

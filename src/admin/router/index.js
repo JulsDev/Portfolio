@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 const baseURL = "https://webdev-api.loftschool.com";
 const guard = axios.create({ baseURL });
 
-const router = new VueRouter({ routes, mode: 'history' });
+const router = new VueRouter({ routes });
 
 router.beforeEach(async (to, from, next) => {
   const isPublicRoute = to.matched.some(record => record.meta.public);

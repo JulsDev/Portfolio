@@ -120,7 +120,7 @@ html(lang="en")
             .section.form#form
               .container.form__container
                 .title.form__title Связаться со мной
-                .form__content
+                form.form__content
                   .form__row
                     .form__block.form__block--name
                       label.form__label Введите ваше имя
@@ -140,6 +140,7 @@ html(lang="en")
                         textarea.form__input.form__textarea(id="message" name="message" type="text" required rows="2"
                           placeholder="Требуется ваша помощь")
                 button(type="submit").form__button Отправить
+              include ./components/form-popup
           include ./components/footer
     
     include ./templates/entry.pug

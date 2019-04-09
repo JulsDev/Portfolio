@@ -3,7 +3,7 @@
     .login-window
       .login-form__btn-close
       .login-form__title Авторизация
-      form.login-form(@submit.prevent="auth")
+      form.login-form(@submit.prevent="login")
         .login-form__row
           LoginInput(
             title="Логин"
@@ -37,18 +37,22 @@
 
   // данный пакет используется как примесь для компонентов
   import {Validator} from "simple-vue-validator";
-  const axios = require('axios');
+  import $axios from "@/requests";
+
+  console.log("Мы в login - script");
 
   export default {
     // используем только миксины из пакета
     mixins: [require('simple-vue-validator').mixin],
     // укажем поля, которые хотим провалидировать
     validators:{
-      "user.name"(value) {
+      "user.name": (value) => {
         // вызываем валидатор, чтобы обработать полученные данные
+        console.log("Валидация");
+
         return Validator.value(value).required('Поле не может быть пустым');
       },
-      "user.password"(value) {
+      "user.password": (value) => {
         return Validator.value(value).required('Поле не может быть пустым');
       } 
     },
@@ -56,7 +60,7 @@
     data(){
       return{
         disableSubmit: false,
-        user:{
+        user: {
           name: "",
           password: ""
         }  
@@ -66,20 +70,27 @@
       LoginInput: () => import('./login-input.vue'),
     },
     methods:{
-      async auth(){
+      async login(){
+
+        console.log("До валидации");
+
         // ждем, пока выполнится валидация
         if((await this.$validate()) === false) return;
         this.disableSubmit = true;
         
+        console.log("После валидации");
+
         try {
           // отправление данных на сервер
-          const response = await axios.post('https://webdev-api.loftschool.com/login', {
+          const response = await $axios.post('/login',{
             name: this.user.name,
             password: this.user.password
           });
 
+          console.log("Отправили запрос");
+
           localStorage.setItem("token", response.data.token);
-          axios.defaults.headers["Authorization"] = `Bearer ${response.data.token}`;
+          $axios.defaults.headers["Authorization"] = `Bearer ${response.data.token}`;
           this.$router.replace("/");
         } catch (error) {
           console.log(error);
@@ -103,15 +114,30 @@
     width: 100%;
     height: 100vh;
     max-height: 1172px;
-    background-color: #2d3c4e;
-    opacity: 0.9; 
+    background: url('../../../images/content/admin/Mountain_Baloon.jpg') center no-repeat;
+    background-size: cover;
+
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #2d3c4e;
+      opacity: 0.6;
+    }
   }
 
   .login-window{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 61px 78px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 58px 75px;
     position: relative;
     background-color: #ffffff;
 

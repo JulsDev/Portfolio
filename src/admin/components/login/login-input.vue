@@ -78,15 +78,9 @@
   .login-input__icon.login{
     background: svg-load("user.svg", fill=rgba($text-color, 0.3), width=100%, height=100%) no-repeat;
   }
-  .login-input__icon.login.error{
-    background: svg-load("user.svg", fill=rgba($errors-color, 0.7), width=100%, height=100%) no-repeat;
-  }
 
   .login-input__icon.password{
     background: svg-load("key.svg", fill=rgba($text-color, 0.3), width=100%, height=100%) no-repeat;
-  }
-  .login-input__icon.password.error{
-    background: svg-load("key.svg", fill=rgba($errors-color, 0.7), width=100%, height=100%) no-repeat;
   }
 
   .login-input__input{
