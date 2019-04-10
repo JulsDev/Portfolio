@@ -13,17 +13,20 @@
 <script>
   export default {
     name: "SkillCards",
-    props:{
-      skillsInfo: Array
-    },
     data(){
-      return{  
+      return{ 
+        skillsInfo: Array
       }
     },
     components:{
       SkillCard: () => import('./skill-card.vue'),
       SkillCardNew: () => import('./skill-card-new.vue'),
     },
+    created(){
+      const data = require("../../../data/skills.json");
+      this.skillsInfo = data;
+    }
+
   }
 </script>
 

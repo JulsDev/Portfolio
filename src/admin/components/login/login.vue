@@ -28,8 +28,8 @@
             autofocus
             :errorText="validation.firstError('user.password')"
             )
-      .login-form__btn-submit
-        button(type="submit" :disabled="disableSubmit").loginButton Отправить
+        .login-form__btn-submit
+          button(type="submit" :disabled="disableSubmit").loginButton Отправить
 </template>
 
 
@@ -133,12 +133,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 58px 75px;
     position: relative;
+    //top: 0;
+    //left: 0;
+    z-index: 10;
+    padding: 54px 70px;
     background-color: #ffffff;
 
     @include phones{
@@ -191,12 +190,10 @@
   .login-form{
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
     width: 100%;
-    max-height: 206px;
 
     @include phones{
-      margin-bottom: 60px;
+      align-items: center;
     }
   }
 

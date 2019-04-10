@@ -8,16 +8,13 @@
             AddButton.addButton__small 
             .addButton__text Добавить группу
         .about-block__content
-          SkillCardS(:skillsInfo="skillsInfo")
+          SkillCardS
 </template>
 
 
 <script>
   export default {
     name: "About",
-    props:{
-      skillsInfo: Array
-    },
     data(){
       return{  
       }

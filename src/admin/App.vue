@@ -4,10 +4,10 @@
       Header
       Navigation
       router-view
-      // About(:skillsInfo="skillsInfo")
+      // About
       // Works
       // Reviews
-      // Login
+      //Login
 
 </template>
 
@@ -17,23 +17,14 @@ import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   
-  data(){
-    return{
-      skillsInfo: {}
-    }
-  },
   components: {
     Header: () => import('./components/common/header.vue'),
     Navigation: () => import('./components/common/navigation.vue'),
     // About: () => import('./components/about/about.vue'),
     // Works: () => import('./components/works/works.vue'),
     // Reviews: () => import('./components/reviews/reviews.vue'),
-    // Login: () => import('./components/login/login.vue'),
+    //Login: () => import('./components/login/login.vue'),
   },
-  created(){
-    const data = require("../data/skills.json");
-    this.skillsInfo = data;
-  }
 }
 
 </script>
