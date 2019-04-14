@@ -4,25 +4,74 @@
       section.about
         .about-block__title
           .title.title__about Блок «Обо мне»
-          .about-block__button
-            AddButton.addButton__small 
-            .addButton__text Добавить группу
+          button.about-block__button(
+            type="button"
+            @click="showAddingForm = true"
+            v-if="showAddingForm === false"
+            )
+            .addButton.addButton__small
+            span.addButton__text  Добавить группу   
         .about-block__content
-          SkillCardS
+          .skill-cards
+            //pre {{skills}}
+            ul.skill-cards__list
+              li.skill-cards__item(v-if="showAddingForm")
+                SkillCardNew(@closeNewSkillCard="showAddingForm = false")
+              li.skill-cards__item(
+                v-for="category in categories"
+                :key="category.id"
+                )
+                SkillCard(
+                  :category="category"
+                  :skills="filterSkillsByCategoryId(category.id)"
+                  )
 </template>
 
 
 <script>
+import {mapActions, mapState} from "vuex";
   export default {
     name: "About",
     data(){
-      return{  
+      return{
+        showAddingForm: false
       }
     },
-    components: {
-      AddButton: () => import('../common/button-add.vue'),
-      SkillCardS: () => import('./skill-cards.vue'),
+    computed: {
+      ...mapState('categories', {
+        categories: state => state.categories
+      }),
+      ...mapState('skills', {
+        skills: state => state.skills
+      })
     },
+    methods:{
+      ...mapActions('categories', ['fetchCategories']),
+      ...mapActions('skills', ['fetchSkill']),
+
+      filterSkillsByCategoryId(categoryId){
+        return this.skills.filter(skill => skill.category === categoryId); 
+      }
+    },
+    async created(){
+      try{
+        // вызываем метод при загрузке страницы
+        await this.fetchCategories();
+      }catch(error){
+        alert('Произошла ошибка при загрузке категорий')
+      }
+
+      try{
+        await this.fetchSkill();
+      }catch(error){
+        alert('Произошла ошибка при загрузке скиллов')
+      }
+    },
+
+    components: {
+      SkillCard: () => import('./skill-card.vue'),
+      SkillCardNew: () => import('./skill-card-new.vue'),
+    }
   }
 </script>
 
@@ -69,4 +118,40 @@
     display: flex;
   }
 
+  .addButton{
+    position: relative;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+
+    &:after{
+      content: "+";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    &__small{
+      width: 18px;
+      height: 18px;
+
+      &:after{
+        content: "+";
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
 </style>

@@ -61,8 +61,8 @@
       return{
         disableSubmit: false,
         user: {
-          name: "",
-          password: ""
+          name: "aseeva032019",
+          password: "osminogka55"
         }  
       };
     },
@@ -71,23 +71,15 @@
     },
     methods:{
       async login(){
-
-        console.log("До валидации");
-
         // ждем, пока выполнится валидация
         if((await this.$validate()) === false) return;
         this.disableSubmit = true;
-        
-        console.log("После валидации");
-
         try {
           // отправление данных на сервер
           const response = await $axios.post('/login',{
             name: this.user.name,
             password: this.user.password
           });
-
-          console.log("Отправили запрос");
 
           localStorage.setItem("token", response.data.token);
           $axios.defaults.headers["Authorization"] = `Bearer ${response.data.token}`;

@@ -7,7 +7,7 @@ export default {
   props: {
     errorText: {
       type: String,
-      default: "Что-то пошло не так!"
+      default: "Некорректные данные!"
     }
   }
 };
