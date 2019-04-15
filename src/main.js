@@ -9,3 +9,6 @@ import "./scripts/skills";
 import "./scripts/reviews";
 import "./scripts/works";
 import "./scripts/dropdown-menu";
+import "./scripts/preloader";
+import "./scripts/picturefill";
+//import "./scripts/form-send";

@@ -60,9 +60,45 @@ body {
   }
 }
 
+
+.admin-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-section{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background: url('../images/content/admin/Mountain_Baloon.jpg') center no-repeat;
+  background-size: cover; 
+}
+
+
+.admin-container{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding: 60px;
+
+  @include tablets{
+    padding: 30px;
+  }
+
+  @include phones {
+    width: 85%;
+    padding: 0;
+    padding-top: 30px;
+  }
+}
+
 button {
   border: 0;
   cursor: pointer;
+  outline: none;
 }
 
 * {
@@ -89,6 +125,7 @@ h6 {
   margin: 0;
 }
 
+app-button[type="button"],
 button[type="button"] {
   cursor: pointer;
   background-color: transparent;

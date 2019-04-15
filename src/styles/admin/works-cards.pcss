@@ -1,0 +1,97 @@
+.works-card__list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.works-card__item,
+.works-card__item-new{
+  margin-right: 30px;
+  margin-bottom: 30px;
+  &:last-child{
+    margin-right: 0;
+  }
+  @include phones{
+    margin-right: 0;
+  }
+}
+
+.works-card__item{
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+  max-height: 556px;
+  box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+
+  &-opacity{
+    opacity: 0.6;
+  }
+}
+
+.works-card__header{
+  display: block;
+  width: 100%;
+  height: 190px;
+  position: relative;
+}
+
+.works-card__image{
+  width: 100%;
+  height: 100%;
+}
+
+.form__tags-list{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "";
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.works-card__content{
+  padding: 40px 30px;
+}
+
+.works-card__title{
+  margin-bottom: 26px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.works-card__descr{
+  margin-bottom: 30px;
+  opacity: 0.7;
+  line-height: 30px;
+  font-family: "Open Sans - Semibold";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.works-card__link{
+  margin-bottom: 45px;
+  color: #383bcf;
+}
+
+.works-card__control{
+  display: inline-flex;
+  width: 100%;
+}
+
+.works-card__text{
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.works-card__control-edit{
+  display: inline-flex;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.works-card__control-remove{
+  display: inline-flex;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+}

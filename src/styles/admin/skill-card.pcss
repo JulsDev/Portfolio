@@ -1,0 +1,147 @@
+.skill-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 387px;
+}
+
+.card-header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  margin-bottom: 30px;
+}
+
+.card-header__title{
+  display: flex;
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+  font-weight: 600;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $text-color;
+}
+
+.card-header__button{
+  display: flex;
+  width: 50%;
+}
+
+.card-header__button{
+  justify-content: flex-end;
+  margin-right: 3px;
+}
+
+
+/////// Content card
+.card-content{
+  display: flex;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 60%;
+ 
+  &__new-card{
+    height: 387px;
+  }
+}
+
+.card-skills__table{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.card-skills__row{
+  display:flex;
+  margin-bottom: 10px;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  &--edit{
+    width: 100%;
+  }
+}
+
+
+.card-skills__col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  
+  &-name{
+    margin-right: 10%;
+
+    &--edit{
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $text-color;
+      margin-right: 10%; 
+    }
+  }
+
+  &-percent{
+    margin-right: 10%;
+    align-items: flex-end;
+
+    &--edit{
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $text-color; 
+    }
+  }
+
+  &-sign{
+    max-width: 50px;
+  }
+
+  &-button{
+    align-items: flex-end;
+    max-width: 50px;
+  }
+}
+
+.card-skills__button{
+    display: inline-flex;
+}
+
+
+/////// Footer card
+.card-footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 23%;
+}
+
+.new-skill{
+  width: 60%;
+  margin-right: 10px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $text-color;
+  opacity: 0.4;
+
+  @include tablets{
+    width: 50%;
+  }
+}
+
+.new-procent{
+  width: 30%;
+  margin-right: 30px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $text-color;
+  opacity: 0.4;
+
+  @include tablets{
+    margin-right: 10px;
+  }
+}

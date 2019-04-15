@@ -1,0 +1,181 @@
+.works-edit{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 32px;
+}
+
+.works-edit__title{
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 74px;
+}
+
+.works-edit__content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  @include tablets{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.works-edit__loader{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 494px;
+  width: 45%; 
+  max-height: 276px;
+  border: 1px dashed #a1a1a1;
+  background-color: #dee4ed;
+  margin-right: 30px;
+
+  @include tablets{
+    display: none;
+  }
+}
+
+.works-edit__loader-tabl{
+  display: none;
+  flex-direction: column;
+  max-width: 466px;
+  max-height: 261px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 60px;
+
+  @include tablets{
+    display: flex;
+  }
+}
+
+.works-tabl-image{
+  @include tablets{
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+.changeButton{
+  @include tablets{
+    display: block;
+    margin-bottom: 50px;
+    color: #383bcf;
+  }
+}
+
+
+.works-edit__loader-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader-text{
+  margin-bottom: 27px;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.works-edit__descr{
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  max-width: 500px;
+  font-family: "Open Sans - Semibold";
+
+  @include tablets{
+    width: 100%;
+    margin-top: 50px; 
+  }
+
+  @include phones{
+    width: 100%;
+    margin-top: 0; 
+  }
+}
+
+.works-form__row{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.works-form__label{
+  margin-bottom: 20px;
+  font-weight: 600;
+  opacity: 0.5;
+}
+.works-form__input{
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $text-color;
+}
+
+.works-form__textarea{
+  width: 100%;
+  resize: none;
+  outline: none;
+  background: none;
+  overflow: hidden;
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.works-form__tags{
+  display: inline-flex;
+}
+
+.form-tags__item{
+  display: inline-flex;
+  align-items: center;
+  margin-right: 9px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: #f4f4f4;
+  
+  &:last-child{
+    margin-right: 0;
+  }
+  @include phones{
+    padding: 5% 3%;
+  }
+}
+
+.form-tag-text{
+  opacity: 0.5;
+  margin-right: 8px; 
+}
+.form-button--remove{
+  width: 11px;
+  heirght: 11px;
+  color: $text-color;
+  opacity: 0.5;
+}
+
+.works-form__row--btn{
+  display: inline-flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+}
+
+.cancelButton{
+  margin-right: 40px;
+  color: #383bcf;
+  font-weight: 500;
+}
