@@ -91,13 +91,13 @@
                 ).cancelButton Отмена
               button(
                 type="button"
-                @click="addNewWorkCard"
+                @click="formMode === 'addCard' ? addNewWorkCard() : editCurWorkCard()"
                 ).saveButton Сохранить
 </template>
 
 
 <script>
-import {mapActions} from "vuex"
+import {mapActions, mapMutations} from "vuex"
 
   export default {
     name: "WorksEdit",
@@ -106,6 +106,7 @@ import {mapActions} from "vuex"
       return{
         isAddPhoto: false,
         renderPhotoUrl: "",
+        formMode: "addCard",  // addCard, editCard
         work:{
           title: "",
           techs: "",
@@ -125,7 +126,7 @@ import {mapActions} from "vuex"
     },
 
     methods:{
-      ...mapActions('works', ['addWorkCard']),
+      ...mapActions('works', ['addWorkCard', 'editCard']),
       
       appendFileAndRenderPhoto(e) {
         const file = e.target.files[0];
@@ -158,7 +159,28 @@ import {mapActions} from "vuex"
         copyTagsArray.splice(index, 1);
         this.work.techs = copyTagsArray.join(", ");
       },
+
+      async editCurWorkCard(){
+
+        this.formMode === 'editCard';
+
+        try{
+          await this.editCard(this.work);
+          this.$emit('CloseWorkForm');
+        }catch(error){
+          throw new Error(
+            console.log(error),
+          )
+        }
+      }
     },
+
+    created () {
+      if(this.formMode === 'editCard') {
+          const baseUrl = $axios.defaults.baseURL;
+          this.renderPhotoUrl = `${baseUrl}/${this.work.photo}`;
+      }
+    }
   }
 </script>
 

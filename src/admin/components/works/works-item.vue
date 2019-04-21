@@ -8,7 +8,7 @@
       .works-card__title {{work.title}}
       .works-card__descr 
         p {{work.description}}
-      .works-card__link {{work.link}}
+      a(:href="work.link").works-card__link {{work.link}}
       .works-card__control
         .works-card__control-edit
           .works-card__text Править
@@ -33,7 +33,8 @@ import $axios from "@/requests";
     name: "WorksItem",   
     props: {
       work: Object,
-      isFormShow: Boolean
+      isFormShow: Boolean,
+      formMode: String
     },
 
     computed: {
@@ -43,11 +44,11 @@ import $axios from "@/requests";
       createTagsArray(){
         console.log(this.work.techs);
         return this.work.techs.split(', ');
-      },
+      },  
     },
 
     methods:{
-      ...mapActions('works', ['removeCard', 'editCard']),
+      ...mapActions('works', ['removeCard']),
 
       getAbsoluteImagePath(imagePath){
         const baseUrl = $axios.defaults.baseURL;
@@ -62,14 +63,9 @@ import $axios from "@/requests";
         }
       },
 
-      async editWorkCard() {
-        try {
-          await this.editCard(this.work);
-        } catch (error) {
-            console.log(error);
-        }
+      editWorkCard(){
+        //this.formMode = "editCard";
       }
-
     }
   }
 </script>

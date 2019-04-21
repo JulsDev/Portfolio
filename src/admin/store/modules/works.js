@@ -15,10 +15,11 @@ export default{
       state.works = state.works.filter(work =>
         work.id !== deletedWorkId)
     },
+    
     EDIT_WORK: (state, editedWork) => {
       state.works = state.works.map(work =>
         work.id === editedWork.id ? editedWork : work)
-    }
+    },
   },
 
   actions:{

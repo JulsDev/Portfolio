@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "rm -rf dist && webpack --mode=production --progress",
-    "reg": "node reg-util.js"
+    "reg": "node reg-util.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -60,6 +61,7 @@
     "vue": "^2.6.7",
     "vue-flickity": "^1.1.2",
     "vue-router": "^3.0.2",
-    "vuex": "^3.1.0"
+    "vuex": "^3.1.0",
+    "webdriverio": "^4.13.1"
   }
 }
