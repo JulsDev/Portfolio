@@ -45,21 +45,9 @@ html(lang="en")
 
       .maincontent
         .welcome-section
-          .parallax-mount-section
-            .parallax__layer(data-speed="0.1")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-0.jpg")).parallax__image
-            .parallax__layer(data-speed="0.10")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-1.png")).parallax__image
-            .parallax__layer(data-speed="0.20")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-2.png")).parallax__image
-            .parallax__layer(data-speed="0.23")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-3.png")).parallax__image
-            .parallax__layer(data-speed="0.33")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-4.png")).parallax__image
-            .parallax__layer(data-speed="0.28")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-5.png")).parallax__image
-            .parallax__layer(data-speed="0.30")
-                img(src=require("./images/content/parallax/mountain-baloon/layer-6.png")).parallax__image                    
+        
+          include ./components/parallax-mount
+
           .fullscreensection.hero#hero
             .container.hero__container
               .hero__content
@@ -93,10 +81,9 @@ html(lang="en")
                     .person-descr__hello Привет, меня зовут
                     .person-descr__name Юлия Асеева
                     .person-descr__youself
-                      p Я занимаюсь разработкой современных сайтов и приложений.
-                      p Мне нравится делать интересные и современные проекты.
+                      p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                     .person-descr__footnote
-                      p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                      p Если у вас есть крутая идея, я с радостью помогу Вам её реализовать!
         
         include ./components/triangles
         
