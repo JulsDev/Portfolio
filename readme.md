@@ -1,21 +1,28 @@
 
-## ФИО:   Асеева Юлия Сергеевна
-## Сайт:  Portfolio
-## Дата:  11.03.2019
+### ФИО:   Асеева Юлия Сергеевна
+### Дата:  11.03.2019
 
 ## Проект Portfolio
 Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена последняя версия Node.js & NPM, а так же последняя версия Yarn
 
+Ссылка на проект: https://julsdev.github.io/Portfolio/
+
 ## Чтобы развернуть проект необходимо:
-$ git clone git@github.com:loftschool/ls-advanced-portfolio.git
-$ cd ls-advanced-portfolio
+$ git clone git@github.com:JulsDev/Portfolio.git
+
+$ cd Portfolio
+
 $ yarn
 
 ## Скрипты package.json:
 Скрипт	Назначение
+
 dev	    Запустит webpack-dev-server с горячей заменой модулей
+
 build	  Соберет проект для production (проект готов к загрузке на сервер)
+
 reg	    Консольная утилита для регистрации. Использовать перед началом работы над админ-панелью.
+
 test    Для запуска тестов
 
 ## Чтобы запустить скрипт:
