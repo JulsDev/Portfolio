@@ -1,0 +1,26 @@
+.about__block
+  .about__left
+    .person-info
+      .person-info__avatar
+        +image(`content/user.jpg`, 'person-info__avatar-img')
+      .person-info__data
+        table.person-info__table
+          - 
+            var data = [
+              ['Проживаю:', 'Москва'],
+              ['Возраст:', '28 лет'],
+              ['Родилась:', '4 июня 1990'],
+            ]
+          each row in data
+            tr.person-info__data-row
+              td.data-row__first-col #{row[0]}
+              td.data-row__second-col #{row[1]}
+  .about__right
+    .person-descr
+      .person-descr__hello Привет, меня зовут
+      .person-descr__name Юлия Асеева
+      .person-descr__youself
+        p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+      .person-descr__footnote
+        p Если у вас есть крутая идея, я с радостью помогу Вам её реализовать!
+        

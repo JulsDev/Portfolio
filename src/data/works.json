@@ -4,7 +4,7 @@
     "title": "Сайт \"Портфолио\"",
     "skills": "HTML5, CSS3, JavaScript, Vue.js, Webpack",
     "photo": "works/portfolio.jpg",
-    "link": "//google.com",
+    "link": "https://julsdev.github.io/Portfolio/",
     "desc": "Очень интересный получился проект! Здесь и Parallax, и анимации, и Vue! И еще много всего интересного"
   },
   {
@@ -12,15 +12,15 @@
     "title": "Сайт \"Фитнесс\"",
     "skills": "HTML5, CSS3",
     "photo": "works/fitness.jpg",
-    "link": "//yandex.ru",
+    "link": "https://julsdev.github.io/fitness/",
     "desc": "Сайт для фитнесс-клуба на чистом HTML и CSS. По-моему, довольно стильный! Но главное, конечно, чтобы заказчику нравилось"
   },
   {
     "id": 3,
     "title": "Сайт \"Бургерная\"",
-    "skills": "HTML5, CSS3, JavaScript, jQuery, Git, Gulp",
+    "skills": "HTML5, CSS3, JavaScript, jQuery, Gulp",
     "photo": "works/burgers.jpg",
-    "link": "//rambler.ru",
+    "link": "https://julsdev.github.io/Burgers/dist/startpage.html",
     "desc": "Сайт для сети бургерных. Надеюсь, получилось пробудить у вас аппетит!"
   }
 ]

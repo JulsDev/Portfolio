@@ -41,8 +41,6 @@
   import {Validator} from "simple-vue-validator";
   import $axios from "@/requests";
 
-  console.log("Мы в login - script");
-
   export default {
     // используем только миксины из пакета
     mixins: [require('simple-vue-validator').mixin],

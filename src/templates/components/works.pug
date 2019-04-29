@@ -52,7 +52,7 @@ script(type="text/x-template")#slider-info
       p.frontend__descr--text {{currentWork.desc}}
     .frontend__link
       +icon(`link`, 'frontend__link-icon')
-      a(href="https://loftschool.com").loftschool__link Посмотреть сайт
+      a(:href="currentWork.link").loftschool__link Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
   ul.frontend__tech--list 

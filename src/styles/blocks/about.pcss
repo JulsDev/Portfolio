@@ -19,18 +19,17 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-right: 5%;
-  margin-left: 18%;
+
 
   @include tablets(){
+    width: 40%;
     margin-right: 64px;
     margin-left: 40px;
   }
 
   @include phones(){
-    margin-bottom: 60px;
-    margin-right: 40px;
-    max-height: 275px;
+    width: 100%;
+    margin: 0 0 15%;
   }
 }
 
@@ -102,6 +101,7 @@
 
   @include phones(){
     font-size: 30px;
+    margin-bottom: 7%;
   }
 }
 
