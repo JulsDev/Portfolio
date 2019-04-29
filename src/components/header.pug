@@ -1,0 +1,19 @@
+header.header
+  a(href="#").logo ЮА
+  .header__menu
+    nav.nav
+      ul.nav__list
+      each item in menu
+        li.nav__item
+          a(href=item.linkSec).nav__link #{item.title}
+  .header__links
+    - var socials = ['insta', 'vk', 'github'];
+    - var socialsLink = ['https://www.instagram.com/osminogka_julia/', 'https://vk.com/id2036633', 'https://github.com/JulsDev'];
+    ul.socials__list
+    each item, index in socials
+      li.socials__item
+        a(href=socialsLink[index]).socials__link
+          +icon(item, 'socials__icon')
+
+  include ./humburger-menu
+  include ./humburger-menu-popup

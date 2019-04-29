@@ -4,7 +4,6 @@
 
 .about__block{
   display: flex;
-  justify-content: center;
   align-items: center;
   position: fixed;
   max-width: 958px;
@@ -18,19 +17,25 @@
 .about__left{
   display: flex;
   flex-direction: column;
-  margin-right: 158px;
-  margin-left: 73px;
+  align-items: center;
+  width: 100%;
+
 
   @include tablets(){
+    width: 40%;
     margin-right: 64px;
     margin-left: 40px;
   }
 
   @include phones(){
-    margin-bottom: 60px;
-    margin-right: 40px;
-    max-height: 275px;
+    width: 100%;
+    margin: 0 0 15%;
   }
+}
+
+.person-info{
+  display: flex;
+  flex-direction: column;
 }
 
 .person-info__avatar{
@@ -44,6 +49,7 @@
 }
 
 .person-info__avatar-img{
+  display: block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -55,8 +61,9 @@
 }
 
 .data-row__first-col{
+  display: flex;
   opacity: .5;
-  padding-right: 69px;
+  padding-right: 50px;
 }
 .data-row__second-col{
   font-weight: 600;
@@ -94,6 +101,7 @@
 
   @include phones(){
     font-size: 30px;
+    margin-bottom: 7%;
   }
 }
 
@@ -109,7 +117,7 @@
   display: block;
   opacity: 0.5;
   font-style: italic;
-  line-height: 30px;
+  line-height: 25px;
   @include phones(){
     display: none;
     font-size: 14px;

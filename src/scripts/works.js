@@ -44,7 +44,8 @@ const info = {
     tags
   },
   props:{
-    currentWork: Object
+    currentWork: Object,
+    currentIndex: Number
   },
   computed:{
     tagsArray(){

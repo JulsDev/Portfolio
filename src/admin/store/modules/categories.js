@@ -26,7 +26,6 @@ export default{
         const response = await this.$axios.post("/categories", {
           title: groupTitle
         });
-        console.log("posst Message")
         return response;  
       }catch(error){
         throw new Error(
