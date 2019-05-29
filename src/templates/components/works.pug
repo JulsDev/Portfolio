@@ -13,14 +13,14 @@ script(type="text/x-template")#slider-container
 
 script(type="text/x-template")#slider-display
   .work-slider-gallery(:data-slide="currentIndex + 1")
-    .works-slider-content
       .works-slider__images
-        img(:src="currentWork.photo").slider__images--main
-        slider(
-          :works="reversedWorks"
-          :currentWork="currentWork"
-          @clickThumb="index => $emit('clickThumb', index)"
-        )    
+        .slider__images--block
+          img(:src="currentWork.photo").slider__images--main
+          slider(
+            :works="reversedWorks"
+            :currentWork="currentWork"
+            @clickThumb="index => $emit('clickThumb', index)"
+          )    
         buttns(
           @slide="direction => $emit('slide', direction)"
         )
