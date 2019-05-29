@@ -6,7 +6,6 @@
   @include tablets(){
     align-items: center;
   }
-
   @include phones(){
     padding: 35% 5%;
   }
@@ -58,13 +57,14 @@
   display: flex;
   width: 60%;
   margin-bottom: 40px;
+  
   &:last-child{
     margin-bottom: 0;
   }
+
   @include tablets(){
     width: 100%;
   }
-  
   @include phones(){
     flex-direction: column;
   }
@@ -144,6 +144,5 @@
   left: 0;
   border-color: $errors-color;
   color: $errors-color;
-  //padding: 12px 20px;
   font-size: 14px;
 }
