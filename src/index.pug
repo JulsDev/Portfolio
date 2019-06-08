@@ -33,7 +33,7 @@ html(lang="en")
             .container.hero__container
               .hero__content
                 .user-info
-                  .user-info__descr Личный сайт<br>веб-разработчика
+                  h1.user-info__descr Личный сайт<br>веб-разработчика
                   .user-info__name Юлия<br>Асеева
               .hero__scroll-button
                 a(href="#about").scroll-down-button Скролл
@@ -51,12 +51,12 @@ html(lang="en")
                 p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .skills-block
               .skills-person-bag
-                  +image(`content/bag.png`, 'skills-bag__img')
+                  +image(`content/bag.png`, 'skills-bag__img', 'Рюкзак')
               #skills-component
         
         .section.works#works
           .container.works__container
-            .title.works-title Мои работы
+            h2.title.works-title Мои работы
             .works-content
               #works-component      
         
@@ -68,7 +68,7 @@ html(lang="en")
                   #reviews-component
             .section.form#form
               .container.form__container
-                .title.form__title Связаться со мной
+                h2.title.form__title Связаться со мной
                 form.form__content
                   .form__row
                     .form__block.form__block--name

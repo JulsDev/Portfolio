@@ -15,7 +15,7 @@ script(type="text/x-template")#slider-display
   .work-slider-gallery(:data-slide="currentIndex + 1")
       .works-slider__images
         .slider__images--block
-          img(:src="currentWork.photo").slider__images--main
+          img(:src="currentWork.photo" alt="Фото основной работы").slider__images--main
           slider(
             :works="reversedWorks"
             :currentWork="currentWork"
@@ -32,7 +32,7 @@ script(type="text/x-template")#slider-list
       :class="{active: currentWork.id === work.id}"
     )
       a(href="#" @click.prevent="$emit('clickThumb', index)").slider-images__link
-        img(:src="work.photo" alt="").slider-images__img
+        img(:src="work.photo" alt="Миниатюры работ").slider-images__img
 
 script(type="text/x-template")#slider-btns    
   .works-slider__control

@@ -1,7 +1,7 @@
 script(type="text/x-template")#reviews-list
   .reviews-block
     .reviews-section__title
-      .title.reviews__title Что обо мне говорят
+      h2.title.reviews__title Что обо мне говорят
       .reviews-slider__controls
         button(type="button" @click="slide('prev')").slider__control.slider__control--circle.slider__control--left
           +icon(`arrow-down`, 'icon__arrow icon__arrow-left')
@@ -17,7 +17,7 @@ script(type="text/x-template")#reviews-list
             .quote__author
               .person-info.person-info-horizontal
               .person-info__avatar
-                img(:src="review['photo']").person-info__img-small
+                img(:src="review['photo']" alt="Фото в отзывах").person-info__img-small
               .person-info__data
                 .person-info__name {{review.name}} 
                 .person-info__occ {{review.occ}}
