@@ -5,7 +5,7 @@
       if(!preloader.classList.contains('active')){
         preloader.classList.add("active");
       }
-    }, 4000);
+    }, 2000);
   }
 
 })();
