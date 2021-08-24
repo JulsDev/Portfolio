@@ -1,0 +1,40 @@
+- 
+  const languageTagList = ["JavaScript (ES6)", "TypeScript", "HTML/CSS", "Node.js", "Python", "C++"];
+- 
+  const technologiesTagList = ["React", "React router", "Redux", "Webpack", "REST APIs", "Sass/Less",
+    "CSS modules", "Bootstrap", "MaterialUI", "Service Worker", "Jest", "Vue.js", "jQuery", "ESLint"
+  ];
+- 
+  const designToolsTagList = ["Figma", "Zeplin", "Avocode", "Photoshop"];
+- 
+  const toolsTagList = ["Sentry", "Lighthouse", "Nginx", "Docker"];
+- 
+  const workflowTagList = ["Git", "Bitbucket/Gitlab/GitHub", "Agile", "Jira", "Confluence", "VSCode", "Slack"];
+
+
+.skills-section
+  .skills-section__block
+    h3.skills-section__title Languages: 
+    .skills-section__tags-block
+      each item in languageTagList
+        .skills-tag #{item}
+  .skills-section__block
+    h3.skills-section__title Technologies
+    .skills-section__tags-block
+      each item in technologiesTagList
+        .skills-tag #{item}
+  .skills-section__block
+    h3.skills-section__title Design Tools
+    .skills-section__tags-block
+      each item in designToolsTagList
+        .skills-tag #{item}
+  .skills-section__block
+    h3.skills-section__title Tools
+    .skills-section__tags-block
+      each item in toolsTagList
+        .skills-tag #{item}
+  .skills-section__block
+    h3.skills-section__title Workflow
+    .skills-section__tags-block
+      each item in workflowTagList
+        .skills-tag #{item}
