@@ -9,6 +9,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
+  const isDevBuild = argv.mode === "development";
+
   const publicPath = '';
 
   const pcss = {
@@ -109,7 +111,9 @@ module.exports = (env, argv) => {
     devServer: {
       historyApiFallback: true,
       noInfo: false,
-      overlay: true
+      overlay: true,
+      hot: isDevBuild,
+      port: 3000
     },
     performance: {
       hints: false

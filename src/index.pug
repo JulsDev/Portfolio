@@ -2,12 +2,12 @@ include ./mixins.pug
 
 - 
   var menu = [
-    {title: "Главная", linkSec : "#hero"},
-    {title: "Обо мне", linkSec : "#about"},
-    {title: "Навыки", linkSec : '#skills'},
-    {title: "Работы", linkSec : '#works'},
-    {title: "Отзывы", linkSec : '#reviews'},
-    {title: "Связаться", linkSec : '#form'}
+    {title: "Home", linkSec : "#hero"},
+    {title: "About me", linkSec : "#about"},
+    {title: "Skills", linkSec : '#skills'},
+    {title: "Works", linkSec : '#works'},
+    {title: "Reviews", linkSec : '#reviews'},
+    {title: "Contacts", linkSec : '#form'}
   ]
 
 
@@ -33,10 +33,12 @@ html(lang="en")
             .container.hero__container
               .hero__content
                 .user-info
-                  h1.user-info__descr Личный сайт<br>веб-разработчика
-                  .user-info__name Юлия<br>Асеева
+                  h1.user-info__descr Personal website<br>of a web developer
+                  .user-info__name
+                    .user-info__firstName Julia
+                    .user-info__lastName Aseeva
               .hero__scroll-button
-                a(href="#about").scroll-down-button Скролл
+                a(href="#about").scroll-down-button Scroll
                   +icon(`scroll`, 'scroll__icon')
           
           .fullscreensection.fullscreensection_centered.about#about
@@ -46,49 +48,48 @@ html(lang="en")
         .section.skills#skills
           .container.skills__container
             .skills-descr
-              h2.skills-descr__title Чем я могу быть полезна вам
-              .skills-descr__about
-                p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              h2.skills-descr__title Skills set
             .skills-block
               .skills-person-bag
-                  +image(`content/bag.png`, 'skills-bag__img', 'Рюкзак')
-              #skills-component
+                  +image(`content/bag.png`, 'skills-bag__img', 'bag')
+              //- #skills-component
+              include ./components/skills-section
         
         .section.works#works
           .container.works__container
-            h2.title.works-title Мои работы
+            h2.title.works-title Works portfolio
             .works-content
               #works-component      
         
         .contacts-section
           .container__contacts
-            .section.reviews#reviews
-              .container.reviews__container
-                .reviews__content-wrapper
-                  #reviews-component
+            //- .section.reviews#reviews
+            //-   .container.reviews__container
+            //-     .reviews__content-wrapper
+            //-       #reviews-component
             .section.form#form
               .container.form__container
-                h2.title.form__title Связаться со мной
+                h2.title.form__title Contacts with me
                 form.form__content
                   .form__row
                     .form__block.form__block--name
-                      label.form__label Введите ваше имя
+                      label.form__label Enter your name
                       .form__input
                         +icon(`user`, 'form__block-icon')
-                        input#name.form__block-input(type='text', name='name', placeholder="Иванов Иван", required='')
+                        input#name.form__block-input(type='text', name='name', placeholder="Ivanov Ivan", required='')
                     .form__block.form__block--email
-                      label.form__label Введите ваш email
+                      label.form__label Enter your email
                       .form__input
                         +icon(`envelope`, 'form__block-icon')
                         input#email.form__block-input(type='email', name='email', placeholder='ivanov@gmail.com', required='')             
                   .form__row
                     .form__block
-                      label.form__label Сообщение к письму
+                      label.form__label Message to letter
                       .form__input.form__input--comment
                         +icon(`message`, 'form__block-icon')
                         textarea.form__input.form__textarea(id="message" name="message" type="text" required rows="2"
-                          placeholder="Требуется ваша помощь")
-                button(type="submit").form__button Отправить
+                          placeholder="Your help is required")
+                button(type="submit").form__button Send
               include ./components/form-popup
           include ./components/footer
     

@@ -1,5 +1,5 @@
 .about{
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .about__block{
@@ -53,6 +53,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  object-fit: cover;
 
   @include phones(){
     width: 172px;
@@ -84,9 +85,9 @@
 }
 
 .person-descr__hello{
+  margin-bottom: 14px;
   opacity: 0.7;
-  margin-bottom: 30px;
-  font-weight: 500;
+  font-weight: 600;
 
   @include phones(){
     margin-bottom: 20px;
@@ -97,7 +98,7 @@
   display: flex;
   font-size: 36px;
   font-weight: 700;
-  margin-bottom: 38px;
+  margin-bottom: 22px;
 
   @include phones(){
     font-size: 30px;
@@ -105,11 +106,14 @@
   }
 }
 
+.person-descr__about {
+  margin-bottom: 10px;
+}
+
 .person-descr__youself{
   display: block;
-  margin-bottom: 14%;
-  opacity: 0.5;
-  height: 47px;
+  margin-bottom: 20px;
+  opacity: 0.7;
   font-weight: 600;
 }
 
@@ -118,6 +122,7 @@
   opacity: 0.5;
   font-style: italic;
   line-height: 25px;
+  font-weight: 600;
   @include phones(){
     display: none;
     font-size: 14px;

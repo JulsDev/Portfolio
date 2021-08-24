@@ -1,26 +1,34 @@
 [
   {
     "id": 1,
-    "title": "Сайт \"Портфолио\"",
-    "skills": "HTML5, CSS3, JavaScript, Vue.js, Webpack",
-    "photo": "works/portfolio.jpg",
+    "title": "Website \"Portfolio\"",
+    "skills": "HTML5, CSS3, Pug, JavaScript, Vue.js, Vue router, Axios, REST APIs, Webpack, Parallax, Animation, Avocode",
+    "photo": "works/portfolio.png",
     "link": "https://julsdev.github.io/Portfolio/",
-    "desc": "Очень интересный получился проект! Здесь и Parallax, и анимации, и Vue! И еще много всего интересного"
+    "desc": "The same portfolio that you are currently viewing ;)"
   },
   {
     "id": 2,
-    "title": "Сайт \"Фитнесс\"",
-    "skills": "HTML5, CSS3",
-    "photo": "works/fitness.jpg",
-    "link": "https://julsdev.github.io/fitness/",
-    "desc": "Сайт для фитнесс-клуба на чистом HTML и CSS. По-моему, довольно стильный! Но главное, конечно, чтобы заказчику нравилось"
+    "title": "Website \"Hoyd design boutique\"",
+    "skills": "React.js, React router, React hook form, SASS, i18next, Webpack, Figma",
+    "photo": "works/hoyd.png",
+    "link": "https://julsdev.github.io/hoyd_design_boutique/",
+    "desc": "Landing page for my friends - Hoyd design boutique"
   },
   {
     "id": 3,
-    "title": "Сайт \"Бургерная\"",
+    "title": "Website \"Burgers\"",
     "skills": "HTML5, CSS3, JavaScript, jQuery, Gulp",
     "photo": "works/burgers.jpg",
     "link": "https://julsdev.github.io/Burgers/dist/startpage.html",
-    "desc": "Сайт для сети бургерных. Надеюсь, получилось пробудить у вас аппетит!"
+    "desc": "Website for a burger chain. Hope it worked to whet your appetite!"
+  },
+  {
+    "id": 4,
+    "title": "Landing page \"Workshop\"",
+    "skills": "React, TypeScript, SASS, Css-modules, Webpack, ESLint",
+    "photo": "works/workshop.png",
+    "link": "https://julsdev.github.io/workshop_poster/",
+    "desc": "Workshop poster. Design maket was provided in pdf"
   }
 ]
