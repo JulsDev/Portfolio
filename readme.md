@@ -1,14 +1,10 @@
-### Portfolio project
+## Portfolio project
 
-## if you want to launch project
+### if you want to launch project
 npm i
 npm run dev (to launch project on localhost:3000)
 
-## if you want to look visually
-https://julsdev.github.io/Portfolio/
-
-
-## tech stack
+### tech stack
 JavaScript\
 Pug\
 PostCSS\
@@ -18,4 +14,3 @@ Vue router\
 REST APIs\
 Parallax\
 Animation
-
