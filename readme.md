@@ -1,7 +1,7 @@
 ## Portfolio project
 
 ### if you want to launch project
-npm i
+npm i\
 npm run dev (to launch project on localhost:3000)
 
 ### tech stack
