@@ -1,14 +1,11 @@
-### Portfolio project
+## Portfolio project
 
-## if you want to launch project
-npm i
-npm run dev (to launch project on localhost:3000)
+### Runs the app in the development mode
+npm i\
+npm run start\
+Open http://localhost:3000 to view it in the browser.
 
-## if you want to look visually
-https://julsdev.github.io/Portfolio/
-
-
-## tech stack
+### tech stack
 JavaScript\
 Pug\
 PostCSS\
@@ -18,4 +15,3 @@ Vue router\
 REST APIs\
 Parallax\
 Animation
-
